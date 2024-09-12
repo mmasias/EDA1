@@ -6,8 +6,9 @@
 |-|
 [Estructuras de datos & conceptos fundamentales](temario/001-intro/primitivasMatricesClasesObjetos.md)
 [Listas](temario/002-listas/README.md)
-Pilas
-Colas
+ ▪️ Doblemente enlazadas
+ ▪️ Pilas
+ ▪️ Colas
 [Árboles](temario/005-arboles/README.md)
 Grafos
 Ficheros
