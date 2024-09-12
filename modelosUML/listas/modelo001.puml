@@ -1,0 +1,33 @@
+interface IDataStructure<T> {
+  + isEmpty(): boolean
+  + size(): int 
+  + listData(): Object[]
+}
+
+class List<T> {
+  - first: Node<T>
+  
+  + insert(data: T, index: int): List<T>
+  + remove(index: int): List<T>
+  + getFirst(): Node<T>
+  + isEmpty(): boolean
+  + size(): int
+  + listData(): Object[]
+}
+
+List .u.|> IDataStructure
+
+class Node<T> {
+  - data: T
+  - next: Node<T>
+
+  + Node(data: T)  
+  + getData(): T
+  + setData(data: T)
+  + getNext(): Node<T>
+  + setNext(next: Node<T>)
+  + count(): int  
+}
+
+List o-r-> Node
+

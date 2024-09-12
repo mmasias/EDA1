@@ -1,0 +1,31 @@
+    class Ejemplo {
+        + main(args : String[]) : void
+        - viewLine(unaLista : GenericList) : void
+    }
+
+    class GenericList<T> {
+        - first : GenericNode<T>
+
+        + size() : int
+        + isEmpty() : boolean
+        + insertFront(value : T) : void
+        + insertEnd(value : T) : void
+        + deleteFront() : void
+        + getFirst() : GenericNode<T>
+        + getLast() : GenericNode<T>
+        + listAll() : T[]
+    }
+
+    class GenericNode<T> {
+        - value : T
+        - next : GenericNode<T>
+
+        + GenericNode(value : T)
+        + getValue() : T
+        + setValue(newValue : T) : void
+        + getNext() : GenericNode<T>
+        + setNext(siguiente : GenericNode<T>) : void
+    }
+
+    Ejemplo .d.> GenericList
+    GenericList "1" *-r- "*" GenericNode : contains >

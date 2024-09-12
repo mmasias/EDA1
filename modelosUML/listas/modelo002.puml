@@ -1,0 +1,70 @@
+@startuml
+
+interface IDataStructure<T> {
+  + isEmpty(): boolean 
+  + size(): int
+  + listData(): Object[]
+}
+
+class List<T> {
+  - first: Node<T>
+
+  + insert(data: T, index: int): List<T>
+  + remove(index: int): List<T>
+  + getFirst(): Node<T>
+  + isEmpty(): boolean
+  + size(): int
+  + listData(): Object[]
+}
+
+List .u.|> IDataStructure
+
+class Node<T> {
+  - data: T
+  - next: Node<T>
+
+  + Node(data: T)
+  + getData(): T  
+  + setData(data: T)
+  + getNext(): Node<T>
+  + setNext(next: Node<T>)
+  + count(): int
+}
+
+List o-r--> Node
+
+class Marathon {
+  - participants: List<Participant>
+  
+  + Marathon()
+  + addParticipant(participant: Participant)
+  + getParticipantNames(): List<String>
+  + getParticipant(name: String): Participant 
+}
+
+Marathon o-u-> List
+Marathon o-r--> Participant
+
+class Participant {
+  - name: String
+  - country: String
+  - birthday: Calendar 
+  - start: Calendar
+  - end: Calendar
+  
+  + Participant()
+  + Participant(name: String, country: String, birthday: Calendar)
+
+  + getName(): String
+  + setName(name: String)  
+  + getCountry(): String
+  + setCountry(country: String)
+  + getBirthday(): Calendar
+  + setBirthday(birthday: Calendar)
+  + getStart(): Calendar
+  + setStart(start: Calendar)
+  + getEnd(): Calendar
+  + setEnd(end: Calendar)
+}
+
+@enduml

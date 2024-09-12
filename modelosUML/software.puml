@@ -1,0 +1,33 @@
+@startuml
+
+class Program
+class Package
+class Class
+class Method
+class Sentence
+class Expression
+class Operator
+class Data
+class Variable
+class Constant
+
+Program *-down-> "+" Package
+Package *-down-> "*" Package
+Package *-down-> "*" Class
+Class *-down-> "*" Class
+Class *-down-> "*" Data : atributte
+Class *-down-> "+" Method
+Method *-down-> "+" Sentence
+Method *-down-> "*" Data : parameter
+Method *-down-> "*" Data : local
+Sentence *-down-> "+" Expression
+Expression *-down-> "*" Operator
+Expression *-down-> "+" Data
+Data <|-down- Variable
+Data <|-down- Constant
+Operator ..> Data
+Data --> Clasificador : estático
+Clasificador <|-down- Class
+Clasificador <|-down- PrimitiveType
+
+@enduml

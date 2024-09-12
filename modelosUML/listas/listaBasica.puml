@@ -1,0 +1,21 @@
+
+    class Node {
+        - String value
+        - Node next
+        + Node (String value)
+        + String getValue()
+        + void setValue (String newValue)
+        + Node getNext()
+        + void setNext(Node next)
+    }
+
+    class List {
+        - Node first
+        + int size()
+        + boolean isEmpty()
+        + void insert(String value)
+        + void delete()
+        + String[] ListAll()
+    }
+
+    List -r-> "1" Node : contains

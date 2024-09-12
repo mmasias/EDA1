@@ -1,0 +1,13 @@
+hide class circle
+hide empty members
+
+class 40
+
+40 --> 38
+40 --> 57
+57 --> 60
+57 --> 42
+57 --> 26
+42 --> 35
+38 --> 15
+

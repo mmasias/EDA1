@@ -1,0 +1,11 @@
+hide class circle
+hide empty members
+
+class 1
+
+1 -d-> 2
+1 -d-> 3
+2 -d-> 4
+2 -d-> 5
+3 -d-> 6
+3 -d-> 7

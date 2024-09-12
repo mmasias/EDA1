@@ -1,0 +1,10 @@
+hide class circle
+hide empty members
+
+class 5
+5 -d- 3
+5 -d- 7
+3 -d- 2
+3 -d- 4
+7 -d- 6
+7 -d- 8

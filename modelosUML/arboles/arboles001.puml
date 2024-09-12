@@ -1,0 +1,15 @@
+hide class circle
+hide empty members
+
+class a
+
+a -d-> b
+a -d-> c
+b -d-> d
+b -d-> e
+e -d-> h 
+e -d-> i
+c -d-> f 
+c -d-> g 
+g -d-> j
+g -d-> k

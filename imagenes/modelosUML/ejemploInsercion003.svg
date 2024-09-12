@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="125px" preserveAspectRatio="none" style="width:79px;height:125px;background:#FFFFFF;" version="1.1" viewBox="0 0 79 125" width="79px" zoomAndPan="magnify"><defs/><g><!--MD5=[2cfdd7b8c8a246074c59fdb4145f08c0]
+class 5--><g id="elem_5"><rect codeLine="4" fill="#F1F1F1" height="26.4883" id="5" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="15" x="32" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="35" y="25.5352">5</text></g><!--MD5=[553e75b4d7d4ea28935e682d06bd7e3d]
+class 3--><g id="elem_3"><rect fill="#F1F1F1" height="26.4883" id="3" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="15" x="7" y="93.49"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="10" y="112.0252">3</text></g><!--MD5=[6f70ae9ed2f36b23b342fa55e50f2963]
+class 7--><g id="elem_7"><rect fill="#F1F1F1" height="26.4883" id="7" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="15" x="57" y="93.49"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="60" y="112.0252">7</text></g><!--MD5=[edd9a7f694bd9a51a0f7b32f828d2281]
+link 5 to 3--><g id="link_5_3"><path codeLine="5" d="M35.81,33.71 C31.08,49.69 22.94,77.22 18.2,93.22 " fill="none" id="5-3" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5ec834373d0f90319a7b1d0acd51ee02]
+link 5 to 7--><g id="link_5_7"><path codeLine="6" d="M43.19,33.71 C47.92,49.69 56.06,77.22 60.8,93.22 " fill="none" id="5-7" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b85248a24d7a9e4f7c7a14d34997c5f5]
+@startuml
+hide class circle
+hide empty members
+
+class 5
+5 -d- 3
+5 -d- 7
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: es
+Country: ES
+--></g></svg>
