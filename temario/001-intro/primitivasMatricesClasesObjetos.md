@@ -46,7 +46,12 @@ cadenaTexto|0x7C000900|0x7C000000
 otraCadena|0x7C009999|0x7C000000
 ||0x7C008888|"Una cadena"|
 terceraCadena|0x7C066666|0x7C008888
+
 </div>
+
+#### String & StringBuilder
+
+[Breve revisión del tema](stringStringBuilder.md)
 
 ### Prácticum
 
