@@ -1,19 +1,3 @@
-function imprimirLinea(longitud = 40, caracter = '-') {
-    console.log(caracter.repeat(longitud));
-}
-
-function imprimirTitulo(titulo) {
-    imprimirLinea(40, '=');
-    console.log(titulo.toUpperCase());
-    imprimirLinea(titulo.length);
-}
-
-function imprimirSubtitulo(subtitulo) {
-    imprimirLinea(subtitulo.length);
-    console.log(subtitulo);
-    imprimirLinea(subtitulo.length);
-}
-
 function main() {
     imprimirTitulo("Primitivos");
 
@@ -67,3 +51,20 @@ function main() {
 }
 
 main();
+
+
+function imprimirLinea(longitud = 40, caracter = '-') {
+    console.log(caracter.repeat(longitud));
+}
+
+function imprimirTitulo(titulo) {
+    imprimirLinea(40, '=');
+    console.log(titulo.toUpperCase());
+    imprimirLinea(titulo.length);
+}
+
+function imprimirSubtitulo(subtitulo) {
+    imprimirLinea(subtitulo.length);
+    console.log(subtitulo);
+    imprimirLinea(subtitulo.length);
+}
