@@ -136,7 +136,7 @@ void modificarArray(int[] arr) {
 
 int[] numeros = {1, 2, 3};
 modificarArray(numeros);
-// numeros[0] ahora es 100</code></pre>
+// numeros[0] ahora es 100
 
 ```
 </td>
@@ -174,9 +174,9 @@ modificar(str);
 2. **Uso de la palabra clave `final` para parámetros:**
    ```java
    public void metodoSeguro(final int x, final StringBuilder sb) {
-       // x = 10; // Error de compilación
+       x = 10; // Error de compilación
        sb.append("Texto"); // Permitido, el objeto puede modificarse
-       // sb = new StringBuilder(); // Error de compilación
+       sb = new StringBuilder(); // Error de compilación
    }
    ```
 
