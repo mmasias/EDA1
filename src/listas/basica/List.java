@@ -24,7 +24,7 @@ public class List {
     public void insertEnd(String value) {
         Node newNode = new Node(value);
         if (this.first == null)
-        this.first = newNode;
+            this.first = newNode;
         else {
             Node iterator = this.first;
             while (iterator.getNext() != null) {
@@ -44,7 +44,7 @@ public class List {
         }
     }
 
-    public void delete() {
+    public void deleteEnd() {
         if (this.first != null) {
             Node iterator = this.first;
             Node previous = null;
@@ -55,6 +55,10 @@ public class List {
             previous.setNext(null);
         }
     }
+
+    public void deleteFront(){}
+
+    public Node[] find(String value){}
 
     public String[] listAll() {
         String[] list = new String[this.size()];
