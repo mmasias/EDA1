@@ -1,7 +1,5 @@
 # EDA1
 
-<div align=center>
-
 |[Temario](/temario/README.md)|
 |-|
 [Estructuras de datos & conceptos fundamentales](temario/001-intro/primitivasMatricesClasesObjetos.md)
@@ -13,4 +11,6 @@
 Grafos
 Ficheros
 
-</div>
+## Lecturas complementarias
+
+- [Acerca de las listas](/temario/999-otrosTemas/acercaDeListas.md)
