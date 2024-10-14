@@ -1,4 +1,4 @@
-# Listas como Estructura de Datos
+# Acerca de las listas
 
 |||
 |-|-|
