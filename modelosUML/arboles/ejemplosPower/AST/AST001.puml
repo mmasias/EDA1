@@ -1,0 +1,54 @@
+@startuml
+
+hide empty members
+
+object "CompilationUnit" as A
+object "ClassDeclaration" as B
+object "Class: Calculator" as C
+object "MethodDeclaration" as D
+object "Method: calculateDiscount" as E
+object "Parameters" as F
+object "double: price" as G
+object "int: customerLevel" as H
+object "MethodBody" as I
+object "IfStatement" as J
+object "Condition" as K
+object "BinaryExpression: >" as L
+object "customerLevel" as M
+object "5" as N
+object "ThenBlock" as O
+object "ReturnStatement" as P
+object "BinaryExpression: *" as Q
+object "price" as R
+object "0.2" as S
+object "ElseBlock" as T
+object "ReturnStatement" as U
+object "BinaryExpression: *" as V
+object "price" as W
+object "0.1" as X
+
+A --> B
+B --> C
+B --> D
+D --> E
+D --> F
+F --> G
+F --> H
+D --> I
+I --> J
+J --> K
+K --> L
+L --> M
+L --> N
+J --> O
+O --> P
+P --> Q
+Q --> R
+Q --> S
+J --> T
+T --> U
+U --> V
+V --> W
+V --> X
+
+@enduml

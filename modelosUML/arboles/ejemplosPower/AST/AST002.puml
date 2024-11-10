@@ -1,0 +1,141 @@
+@startuml
+hide empty members
+
+object "CompilationUnit" as cu
+object "ClassDeclaration" as cd
+object "Class: NumberGuessGame" as c
+object "MethodDeclaration" as md
+object "Method: playGame" as m
+object "MethodBody" as mb
+
+object "LocalVariableDeclaration: random" as var1
+object "NewExpression: Random()" as new1
+
+object "LocalVariableDeclaration: secretNumber" as var2
+object "BinaryExpression: +" as add1
+object "MethodInvocation: nextInt" as mi1
+object "VariableReference: random" as randRef1
+object "IntegerLiteral: 100" as int1
+object "IntegerLiteral: 1" as int2
+
+object "LocalVariableDeclaration: scanner" as var3
+object "NewExpression: Scanner(System.in)" as new2
+
+object "LocalVariableDeclaration: attempts" as var4
+object "IntegerLiteral: 3" as int3
+
+object "WhileStatement" as ws
+object "Condition" as wcond
+object "BinaryExpression: >" as gt
+object "VariableReference: attempts" as attRef1
+object "IntegerLiteral: 0" as int4
+
+object "Block" as wb
+object "PrintStatement" as ps1
+object "StringLiteral: Introduce un número (1-100):" as str1
+
+object "LocalVariableDeclaration: guess" as var5
+object "MethodInvocation: nextInt" as mi2
+object "VariableReference: scanner" as scanRef1
+
+object "IfStatement" as ifs
+object "Condition" as ifcond
+object "BinaryExpression: ==" as eq
+object "VariableReference: guess" as guessRef1
+object "VariableReference: secretNumber" as secRef1
+
+object "ThenBlock" as tb
+object "PrintStatement" as ps2
+object "StringLiteral: ¡Has ganado!" as str2
+object "ReturnStatement" as ret
+
+object "ElseIfBlock" as eib
+object "Condition" as eibcond
+object "BinaryExpression: <" as lt
+object "VariableReference: guess" as guessRef2
+object "VariableReference: secretNumber" as secRef2
+object "PrintStatement" as ps3
+object "StringLiteral: El número es mayor" as str3
+
+object "ElseBlock" as eb
+object "PrintStatement" as ps4
+object "StringLiteral: El número es menor" as str4
+
+object "ExpressionStatement" as es
+object "DecrementExpression" as dec
+object "VariableReference: attempts" as attRef2
+
+object "PrintStatement" as ps5
+object "StringConcatenation" as concat
+object "StringLiteral: ¡Game Over! El número era " as str5
+object "VariableReference: secretNumber" as secRef3
+
+cu --> cd
+cd --> c
+cd --> md
+md --> m
+md --> mb
+
+mb --> var1
+var1 --> new1
+
+mb --> var2
+var2 --> add1
+add1 --> mi1
+mi1 --> randRef1
+mi1 --> int1
+add1 --> int2
+
+mb --> var3
+var3 --> new2
+
+mb --> var4
+var4 --> int3
+
+mb --> ws
+ws --> wcond
+wcond --> gt
+gt --> attRef1
+gt --> int4
+
+ws --> wb
+wb --> ps1
+ps1 --> str1
+
+wb --> var5
+var5 --> mi2
+mi2 --> scanRef1
+
+wb --> ifs
+ifs --> ifcond
+ifcond --> eq
+eq --> guessRef1
+eq --> secRef1
+
+ifs --> tb
+tb --> ps2
+ps2 --> str2
+tb --> ret
+
+ifs --> eib
+eib --> eibcond
+eibcond --> lt
+lt --> guessRef2
+lt --> secRef2
+eib --> ps3
+ps3 --> str3
+
+ifs --> eb
+eb --> ps4
+ps4 --> str4
+
+wb --> es
+es --> dec
+dec --> attRef2
+
+mb --> ps5
+ps5 --> concat
+concat --> str5
+concat --> secRef3
+
+@enduml

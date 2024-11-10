@@ -1,0 +1,354 @@
+@startuml
+hide empty members
+left to right direction
+
+object "CompilationUnit" as cu
+object "PackageDeclaration: vPRG1" as pkg
+object "ImportDeclaration: java.util.Scanner" as imp
+object "ClassDeclaration" as cd
+object "Class: Marco" as c
+object "MethodDeclaration: main" as md
+object "Parameter: String[] args" as param
+
+object "LocalVariableDeclaration: userInput" as var1
+object "NewExpression: Scanner(System.in)" as new1
+
+object "FinalVariableDeclaration: INITIAL_DISTANCE" as const1
+object "DoubleLiteral: 350" as num1
+object "FinalVariableDeclaration: MOTHER_ADVANCE" as const2
+object "DoubleLiteral: 80" as num2
+object "FinalVariableDeclaration: HARD_RAIN" as const3
+object "DoubleLiteral: 0.1" as num3
+object "FinalVariableDeclaration: SOFT_RAIN" as const4
+object "DoubleLiteral: 0.4" as num4
+object "FinalVariableDeclaration: AMEDIO_ESCAPES" as const5
+object "DoubleLiteral: 0.15" as num5
+object "FinalVariableDeclaration: AMEDIO_GET_TIRED" as const6
+object "DoubleLiteral: 0.25" as num6
+
+object "LocalVariableDeclaration: remainingDistance" as var2
+object "VariableReference: INITIAL_DISTANCE" as constRef1
+object "LocalVariableDeclaration: days" as var3
+object "IntegerLiteral: 0" as num7
+object "LocalVariableDeclaration: onJourney" as var4
+object "BinaryExpression: >" as gt1
+object "VariableReference: remainingDistance" as distRef1
+object "IntegerLiteral: 0" as num8
+
+object "WhileStatement" as ws
+object "VariableReference: onJourney" as journeyRef1
+
+object "Block" as wb
+object "IncrementExpression" as inc
+object "VariableReference: days" as daysRef1
+
+object "LocalVariableDeclaration: marcoVelocity" as var5
+object "BinaryExpression: +" as add1
+object "BinaryExpression: *" as mult1
+object "MethodInvocation: Math.random" as rand1
+object "DoubleLiteral: 5" as num9
+object "DoubleLiteral: 10" as num10
+
+object "LocalVariableDeclaration: marcoTime" as var6
+object "BinaryExpression: +" as add2
+object "BinaryExpression: *" as mult2
+object "MethodInvocation: Math.random" as rand2
+object "DoubleLiteral: 2" as num11
+object "DoubleLiteral: 8" as num12
+
+object "LocalVariableDeclaration: rainProbability" as var7
+object "MethodInvocation: Math.random" as rand3
+
+object "LocalVariableDeclaration: velocityChange" as var8
+object "DoubleLiteral: 1" as num13
+
+object "LocalVariableDeclaration: history" as var9
+object "StringLiteral: Buen dia" as str1
+
+object "IfStatement" as if1
+object "Condition" as cond1
+object "BinaryExpression: <=" as lte1
+object "VariableReference: rainProbability" as rainRef1
+object "VariableReference: HARD_RAIN" as hardRainRef1
+
+object "ThenBlock" as tb1
+object "Assignment: velocityChange" as assign1
+object "DoubleLiteral: 0.25" as num14
+object "Assignment: history" as assign2
+object "StringLiteral: Lluvia fuerte!" as str2
+
+object "ElseIfBlock" as eib1
+object "Condition" as cond2
+object "BinaryExpression: <=" as lte2
+object "VariableReference: rainProbability" as rainRef2
+object "VariableReference: SOFT_RAIN" as softRainRef1
+
+object "ThenBlock" as tb2
+object "Assignment: velocityChange" as assign3
+object "DoubleLiteral: 0.75" as num15
+object "Assignment: history" as assign4
+object "StringLiteral: Lluvia suave!" as str3
+
+object "LocalVariableDeclaration: timeChange" as var10
+object "DoubleLiteral: 0" as num16
+
+object "IfStatement" as if2
+object "Condition" as cond3
+object "BinaryExpression: <=" as lte3
+object "MethodInvocation: Math.random" as rand4
+object "VariableReference: AMEDIO_GET_TIRED" as tiredRef1
+
+object "ThenBlock" as tb3
+object "Assignment: velocityChange" as assign5
+object "BinaryExpression: *" as mult3
+object "VariableReference: velocityChange" as velRef1
+object "DoubleLiteral: 0.90" as num17
+object "Assignment: history" as assign6
+object "StringConcatenation" as concat1
+object "VariableReference: history" as histRef1
+object "StringLiteral: . El mono se cansa" as str4
+
+object "IfStatement" as if3
+object "Condition" as cond4
+object "BinaryExpression: <=" as lte4
+object "MethodInvocation: Math.random" as rand5
+object "VariableReference: AMEDIO_ESCAPES" as escapeRef1
+
+object "ThenBlock" as tb4
+object "Assignment: timeChange" as assign7
+object "IntegerLiteral: -2" as num18
+object "Assignment: history" as assign8
+object "StringConcatenation" as concat2
+object "VariableReference: history" as histRef2
+object "StringLiteral: . El mono se escapa." as str5
+
+object "Assignment: marcoTime" as assign9
+object "BinaryExpression: +" as add3
+object "VariableReference: marcoTime" as timeRef1
+object "VariableReference: timeChange" as timeChRef1
+
+object "Assignment: marcoVelocity" as assign10
+object "BinaryExpression: *" as mult4
+object "VariableReference: marcoVelocity" as velRef2
+object "VariableReference: velocityChange" as velChRef1
+
+object "LocalVariableDeclaration: marcoAdvance" as var11
+object "BinaryExpression: *" as mult5
+object "VariableReference: marcoVelocity" as velRef3
+object "VariableReference: marcoTime" as timeRef2
+
+object "Assignment: remainingDistance" as assign11
+object "BinaryExpression: -" as sub1
+object "BinaryExpression: +" as add4
+object "VariableReference: remainingDistance" as distRef2
+object "VariableReference: marcoAdvance" as advRef1
+object "VariableReference: MOTHER_ADVANCE" as mothRef1
+
+object "PrintStatement" as print1
+object "StringConcatenation" as concat3
+object "StringLiteral: Dia " as str6
+object "VariableReference: days" as daysRef2
+
+object "PrintStatement" as print2
+object "VariableReference: history" as histRef3
+
+object "PrintStatement" as print3
+object "StringConcatenation" as concat4
+object "StringLiteral: Marco avanzó " as str7
+object "VariableReference: marcoAdvance" as advRef2
+
+object "PrintStatement" as print4
+object "StringConcatenation" as concat5
+object "StringLiteral: Lo separa de su madre " as str8
+object "VariableReference: remainingDistance" as distRef3
+object "StringLiteral:  Km." as str9
+
+object "PrintStatement" as print5
+object "MethodInvocation: repeat" as repeat1
+object "StringLiteral: -" as str10
+object "IntegerLiteral: 10" as num19
+
+object "Assignment: onJourney" as assign12
+object "BinaryExpression: >" as gt2
+object "VariableReference: remainingDistance" as distRef4
+object "IntegerLiteral: 0" as num20
+
+object "PrintStatement" as print6
+object "StringConcatenation" as concat6
+object "StringLiteral: Marco se encuentra con su madre después de " as str11
+object "VariableReference: days" as daysRef3
+object "StringLiteral:  días!" as str12
+
+cu --> pkg
+cu --> imp
+cu --> cd
+cd --> c
+cd --> md
+md --> param
+
+md --> var1
+var1 --> new1
+
+md --> const1
+const1 --> num1
+md --> const2
+const2 --> num2
+md --> const3
+const3 --> num3
+md --> const4
+const4 --> num4
+md --> const5
+const5 --> num5
+md --> const6
+const6 --> num6
+
+md --> var2
+var2 --> constRef1
+md --> var3
+var3 --> num7
+md --> var4
+var4 --> gt1
+gt1 --> distRef1
+gt1 --> num8
+
+md --> ws
+ws --> journeyRef1
+ws --> wb
+
+wb --> inc
+inc --> daysRef1
+
+wb --> var5
+var5 --> add1
+add1 --> mult1
+mult1 --> rand1
+mult1 --> num9
+add1 --> num10
+
+wb --> var6
+var6 --> add2
+add2 --> mult2
+mult2 --> rand2
+mult2 --> num11
+add2 --> num12
+
+wb --> var7
+var7 --> rand3
+
+wb --> var8
+var8 --> num13
+
+wb --> var9
+var9 --> str1
+
+wb --> if1
+if1 --> cond1
+cond1 --> lte1
+lte1 --> rainRef1
+lte1 --> hardRainRef1
+if1 --> tb1
+tb1 --> assign1
+assign1 --> num14
+tb1 --> assign2
+assign2 --> str2
+
+if1 --> eib1
+eib1 --> cond2
+cond2 --> lte2
+lte2 --> rainRef2
+lte2 --> softRainRef1
+eib1 --> tb2
+tb2 --> assign3
+assign3 --> num15
+tb2 --> assign4
+assign4 --> str3
+
+wb --> var10
+var10 --> num16
+
+wb --> if2
+if2 --> cond3
+cond3 --> lte3
+lte3 --> rand4
+lte3 --> tiredRef1
+if2 --> tb3
+tb3 --> assign5
+assign5 --> mult3
+mult3 --> velRef1
+mult3 --> num17
+tb3 --> assign6
+assign6 --> concat1
+concat1 --> histRef1
+concat1 --> str4
+
+wb --> if3
+if3 --> cond4
+cond4 --> lte4
+lte4 --> rand5
+lte4 --> escapeRef1
+if3 --> tb4
+tb4 --> assign7
+assign7 --> num18
+tb4 --> assign8
+assign8 --> concat2
+concat2 --> histRef2
+concat2 --> str5
+
+wb --> assign9
+assign9 --> add3
+add3 --> timeRef1
+add3 --> timeChRef1
+
+wb --> assign10
+assign10 --> mult4
+mult4 --> velRef2
+mult4 --> velChRef1
+
+wb --> var11
+var11 --> mult5
+mult5 --> velRef3
+mult5 --> timeRef2
+
+wb --> assign11
+assign11 --> sub1
+sub1 --> add4
+add4 --> distRef2
+add4 --> mothRef1
+sub1 --> advRef1
+
+wb --> print1
+print1 --> concat3
+concat3 --> str6
+concat3 --> daysRef2
+
+wb --> print2
+print2 --> histRef3
+
+wb --> print3
+print3 --> concat4
+concat4 --> str7
+concat4 --> advRef2
+
+wb --> print4
+print4 --> concat5
+concat5 --> str8
+concat5 --> distRef3
+concat5 --> str9
+
+wb --> print5
+print5 --> repeat1
+repeat1 --> str10
+repeat1 --> num19
+
+wb --> assign12
+assign12 --> gt2
+gt2 --> distRef4
+gt2 --> num20
+
+md --> print6
+print6 --> concat6
+concat6 --> str11
+concat6 --> daysRef3
+concat6 --> str12
+
+@enduml

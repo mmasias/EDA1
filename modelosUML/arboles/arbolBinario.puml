@@ -1,7 +1,11 @@
-hide class circle
-hide empty members
-
-class 40
+object 40
+object 38
+object 57
+object 60
+object 26
+object 35
+object 42
+object 15
 
 40 --> 38
 40 --> 57

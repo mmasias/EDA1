@@ -1,7 +1,10 @@
-hide class circle
-hide empty members
-
-class 1
+object 1
+object 2
+object 3
+object 4
+object 5
+object 6
+object 7
 
 1 -d-> 2
 1 -d-> 3

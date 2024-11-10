@@ -1,7 +1,10 @@
-hide class circle
-hide empty members
-
-class a
+object a
+object b
+object c
+object d
+object e
+object f
+object g
 
 a -d-> b
 b -d-> d
