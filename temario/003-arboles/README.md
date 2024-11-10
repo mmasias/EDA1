@@ -10,10 +10,10 @@ Los árboles permiten representar datos de manera jerárquica, lo que es crucial
 
 |||
 |-|-|
-|Sistemas de archivos|Árboles DOM en desarrollo web
-|Bases de datos|Árboles de decisión en IA
-|Procesamiento de lenguaje natural|Estructura de JSON/XML
-|Algoritmos de búsqueda y clasificación.|
+|Sistemas de archivos|Árboles DOM en desarrollo web|
+|Bases de datos|Árboles de decisión en IA|
+|Procesamiento de lenguaje natural|Estructura de JSON/XML|
+|Algoritmos de búsqueda y clasificación.||
 
 </div>
 
@@ -161,8 +161,6 @@ Consiste en **nodos** conectados.
 ||Propiedades específicas (como en BST)|
 ||Restricciones de balance|
 
-Ahora cada elemento tiene su propia fila, la columna de la izquierda se llena solo cuando es necesario, he eliminado los guiones al inicio de cada elemento y no hay espacios entre los|.
-
 ### Tipos de Árboles
 
 [Tipos](tipos.md)
@@ -228,4 +226,3 @@ Ahora cada elemento tiene su propia fila, la columna de la izquierda se llena so
 |Árbol de Fenwick (BIT)|Estructura para sumas acumulativas
 ||Operaciones eficientes de actualización y consulta
 ||Usado en problemas de rango dinámico|
-

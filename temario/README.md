@@ -5,10 +5,10 @@
 ## Temario
 
 - [Estructuras de datos & conceptos fundamentales](001-intro/primitivasMatricesClasesObjetos.md)
-- [Listas](002-listas/README.md)
-  - [Pilas](003-pilas/README.md)
-  - [Colas](004-colas/README.md)
-- [Árboles](005-arboles/README.md)
+- [Listas](002-00-listas/README.md)
+  - [Pilas](002-01-pilas/README.md)
+  - [Colas](002-03-colas/README.md)
+- [Árboles](003-arboles/README.md)
 - Grafos
 - Ficheros
 
