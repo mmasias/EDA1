@@ -1,0 +1,35 @@
+@startuml
+digraph b_tree {
+    node [shape = record];
+    
+    node0[label = "<f0> |<f1> 30|<f2> 60 |<f3>"];
+    node1[label = "<f0> |<f1> 10|<f2> 20 |<f3>"];
+    node2[label = "<f0> |<f1> 40|<f2> 50 |<f3>"];
+    node3[label = "<f0> |<f1> 70|<f2> 80 |<f3>"];
+    node4[label = "<f0> |<f1> 5 |<f2>"];
+    node5[label = "<f0> |<f1> 15 |<f2>"];
+    node6[label = "<f0> |<f1> 25 |<f2>"];
+    node7[label = "<f0> |<f1> 35 |<f2>"];
+    node8[label = "<f0> |<f1> 45 |<f2>"];
+    node9[label = "<f0> |<f1> 55 |<f2>"];
+    node10[label = "<f0> |<f1> 65 |<f2>"];
+    node11[label = "<f0> |<f1> 75 |<f2>"];
+    node12[label = "<f0> |<f1> 85 |<f2>"];
+
+    "node0":f0 -> "node1";
+    "node0":f1 -> "node2";
+    "node0":f2 -> "node3";
+    
+    "node1":f0 -> "node4";
+    "node1":f1 -> "node5";
+    "node1":f2 -> "node6";
+    
+    "node2":f0 -> "node7";
+    "node2":f1 -> "node8";
+    "node2":f2 -> "node9";
+    
+    "node3":f0 -> "node10";
+    "node3":f1 -> "node11";
+    "node3":f2 -> "node12";
+}
+@enduml

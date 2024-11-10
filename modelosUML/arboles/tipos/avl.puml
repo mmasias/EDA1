@@ -1,0 +1,20 @@
+@startuml
+digraph avl_tree {
+    node [shape = box]
+    
+    15 [label="15\nBF: -1"]
+    8 [label="8\nBF: -1"]
+    25 [label="25\nBF: 1"]
+    4 [label="4\nBF: 0"]
+    12 [label="12\nBF: 0"]
+    30 [label="30\nBF: 0"]
+    2 [label="2\nBF: 0"]
+    
+    15 -> 8
+    15 -> 25
+    8 -> 4
+    8 -> 12
+    25 -> 30
+    4 -> 2
+}
+@enduml

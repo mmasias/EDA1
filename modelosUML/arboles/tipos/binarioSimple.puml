@@ -1,0 +1,14 @@
+@startuml
+digraph binary_tree {
+    node [shape = box]
+    8 -> 23
+    8 -> 15
+    23 -> 4
+    23 -> 42
+    15 -> 16
+    4 -> 7
+    4 -> 31
+    42 -> 99
+    16 -> 11
+}
+@enduml

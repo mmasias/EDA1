@@ -1,0 +1,44 @@
+@startuml
+digraph b_tree_sequence {
+    compound=true;
+    node [shape = record, height = .1];
+    
+    subgraph cluster_0 {
+        label = "Estado Inicial\n(Queremos insertar 35)"
+        
+        n0_0[label = "<f0> |<f1> 30|<f2> 47|<f3> 60 |<f4>"];
+        n0_2[label = "<f0> |<f1> 40|<f2> 46 |<f3>"];
+        n0_3[label = "<f0> |<f1> 48|<f2> 50 |<f3>"];
+        n0_8[label = "<f0> |<f1> 35 |<f2>", style=filled, fillcolor=lightgray];
+        
+        n0_0:f1 -> n0_2;
+        n0_0:f2 -> n0_3;
+    }
+    
+    subgraph cluster_1 {
+        label = "35 sube a la raíz tras splits\n(Overflow en raíz)"
+        
+        n1_0[label = "<f0> |<f1> 30|<f2> 35|<f3> 47|<f4> 60 |<f5>", style=filled, fillcolor=pink];
+        n1_2[label = "<f0> |<f1> 40|<f2> 46 |<f3>"];
+        n1_3[label = "<f0> |<f1> 48|<f2> 50 |<f3>"];
+        
+        n1_0:f2 -> n1_2;
+        n1_0:f3 -> n1_3;
+    }
+    
+    subgraph cluster_2 {
+        label = "Split de raíz\n(Árbol crece en altura)"
+        
+        n2_root[label = "<f0> |<f1> 47 |<f2>", style=filled, fillcolor=lightblue];
+        n2_left[label = "<f0> |<f1> 30|<f2> 35 |<f3>"];
+        n2_right[label = "<f0> |<f1> 60 |<f2>"];
+        n2_2[label = "<f0> |<f1> 40|<f2> 46 |<f3>"];
+        n2_3[label = "<f0> |<f1> 48|<f2> 50 |<f3>"];
+        
+        n2_root:f0 -> n2_left;
+        n2_root:f1 -> n2_right;
+        n2_left:f2 -> n2_2;
+        n2_right:f0 -> n2_3;
+    }
+}
+@enduml

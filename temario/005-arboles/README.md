@@ -104,31 +104,128 @@ Consiste en **nodos** conectados.
 
 #### Básicas
 
-|||
+|Operación|Descripción|
 |-|-|
-|[Recorrido](recorridos.md)|Visitar todos los nodos en un orden específico:<br>- Preorden (raíz, izquierda, derecha)<br>- Inorden (izquierda, raíz, derecha)<br>- Postorden (izquierda, derecha, raíz)<br>- Por niveles (nivel a nivel, de izquierda a derecha)
-|[Inserción](inserciones.md)|Agregar nodos respetando las propiedades del árbol:<br>- Como hoja<br>- En una posición específica<br>- Manteniendo el orden (en árboles ordenados)
-|Búsqueda|Encontrar un nodo específico:<br>- Por valor<br>- Por posición<br>- Por relación (padre, hijo, hermano)
-|Eliminación|Remover nodos manteniendo la estructura del árbol:<br>- Eliminación de hojas<br>- Eliminación de nodos internos (con restructuración)<br>- Eliminación preservando propiedades específicas
+|[Recorrido](recorridos.md)|Visitar todos los nodos en un orden específico|
+||Preorden (raíz, izquierda, derecha)|
+||Inorden (izquierda, raíz, derecha)|
+||Postorden (izquierda, derecha, raíz)|
+||Por niveles (nivel a nivel, de izquierda a derecha)|
+|[Inserción](inserciones.md)|Agregar nodos respetando las propiedades del árbol|
+||Como hoja|
+||En una posición específica|
+||Manteniendo el orden (en árboles ordenados)|
+|Búsqueda|Encontrar un nodo específico|
+||Por valor|
+||Por posición|
+||Por relación (padre, hijo, hermano)|
+|Eliminación|Remover nodos manteniendo la estructura del árbol|
+||Eliminación de hojas|
+||Eliminación de nodos internos (con restructuración)|
+||Eliminación preservando propiedades específicas|
 
 #### Avanzadas
 
-|||
+|Operación|Descripción|
 |-|-|
-|Cálculo de altura|Determinar la altura de:<br>- Todo el árbol<br>- Un nodo específico<br>- Un subárbol
-|Búsqueda de ancestro común|Encontrar el ancestro común más cercano entre dos nodos:<br>- Por recorrido hacia arriba<br>- Por marcado de caminos<br>- Por comparación de profundidades
-|Balanceo|Reorganizar el árbol para mantener balance:<br>- Rotaciones simples<br>- Rotaciones dobles<br>- Rebalanceo completo
-|Clonación y copia|Crear copias del árbol:<br>- Copia superficial<br>- Copia profunda<br>- Copia parcial (subárboles)
-|Operaciones de análisis|Calcular propiedades del árbol:<br>- Número de nodos<br>- Profundidad máxima/mínima<br>- Factor de ramificación
-|Fusión y división|Operaciones estructurales complejas:<br>- Combinar dos árboles<br>- Dividir un árbol en subárboles<br>- Injertar subárboles
-|Serialización|Convertir el árbol en una forma lineal:<br>- Para almacenamiento<br>- Para transmisión<br>- Para persistencia
-|Validación|Verificar propiedades del árbol:<br>- Integridad estructural<br>- Propiedades específicas (como en BST)<br>- Restricciones de balance
+|Cálculo de altura|Determinar la altura de:|
+||Todo el árbol|
+||Un nodo específico|
+||Un subárbol|
+|Búsqueda de ancestro común|Encontrar el ancestro común más cercano entre dos nodos:|
+||Por recorrido hacia arriba|
+||Por marcado de caminos|
+||Por comparación de profundidades|
+|Balanceo|Reorganizar el árbol para mantener balance:|
+||Rotaciones simples|
+||Rotaciones dobles|
+||Rebalanceo completo|
+|Clonación y copia|Crear copias del árbol:|
+||Copia superficial|
+||Copia profunda|
+||Copia parcial (subárboles)|
+|Operaciones de análisis|Calcular propiedades del árbol:|
+||Número de nodos|
+||Profundidad máxima/mínima|
+||Factor de ramificación|
+|Fusión y división|Operaciones estructurales complejas:|
+||Combinar dos árboles|
+||Dividir un árbol en subárboles|
+||Injertar subárboles|
+|Serialización|Convertir el árbol en una forma lineal:|
+||Para almacenamiento|
+||Para transmisión|
+||Para persistencia|
+|Validación|Verificar propiedades del árbol:|
+||Integridad estructural|
+||Propiedades específicas (como en BST)|
+||Restricciones de balance|
+
+Ahora cada elemento tiene su propia fila, la columna de la izquierda se llena solo cuando es necesario, he eliminado los guiones al inicio de cada elemento y no hay espacios entre los|.
 
 ### Tipos de Árboles
 
+[Tipos](tipos.md)
+
 |||
 |-|-|
-Binarios|Cada nodo tiene como máximo dos hijos.
-Binarios de búsqueda (BST)|Un tipo de árbol binario donde cada nodo tiene un valor mayor que todos los nodos de su subárbol izquierdo y menor que los de su subárbol derecho.
-AVL|Árboles binarios de búsqueda balanceados.
-N-arios|Cada nodo puede tener más de dos hijos.
+|**Árboles Binarios**||
+|Árbol Binario Simple|Cada nodo tiene máximo dos hijos
+||Sin restricciones de ordenación
+||Útil para representar estructuras jerárquicas simples|
+|Árbol Binario Completo|Todos los niveles están llenos excepto posiblemente el último
+||Nodos del último nivel están lo más a la izquierda posible
+||Ideal para arrays y heaps|
+|Árbol Binario Perfecto|Todos los niveles están completamente llenos
+||Número de nodos = 2^h+1 - 1 (h = altura)
+||Forma perfectamente simétrica|
+|Árbol Binario Sesgado|Todos los nodos tienen solo hijo izquierdo o derecho
+||Degenera efectivamente en una lista
+||Caso peor para muchas operaciones|
+|**Árboles de Búsqueda**||
+|BST (Binary Search Tree)|Hijo izquierdo < Padre < Hijo derecho
+||Búsqueda, inserción y eliminación O(h)
+||Base para estructuras más complejas|
+|AVL|BST auto-balanceado
+||Factor de balance entre -1 y 1
+||Garantiza operaciones en O(log n)|
+|Rojo-Negro|BST auto-balanceado con coloración
+||Garantiza máximo 2 veces más alto que el mínimo
+||Usado en muchas librerías estándar (map, set)|
+|Árbol Splay|BST que mueve nodos accedidos a la raíz
+||Auto-optimizante para accesos frecuentes
+||Bueno para cachés y búsquedas localizadas|
+|**Árboles Multivia**||
+|B-Tree|Generalización de BST para almacenamiento secundario
+||Nodos pueden tener múltiples claves y hijos
+||Optimizado para sistemas de archivos y bases de datos|
+|B+ Tree|Variante de B-Tree con todas las claves en hojas
+||Hojas enlazadas para recorrido secuencial
+||Estándar en sistemas de bases de datos|
+|B* Tree|B-Tree con mayor factor de ocupación
+||Redistribución de claves entre hermanos
+||Mejor utilización del espacio|
+|**Árboles Especializados**||
+|Trie (Árbol de prefijos)|Optimizado para strings y búsquedas de prefijos
+||Cada nodo representa un carácter
+||Usado en autocompletado y diccionarios|
+|Árbol de Segmentos|Divide intervalos en segmentos
+||Permite consultas y actualizaciones de rangos
+||Común en problemas de geometría computacional|
+|Quad-Tree|Cada nodo tiene 4 hijos
+||División espacial en 2D
+||Usado en gráficos por computadora|
+|Octree|Cada nodo tiene 8 hijos
+||División espacial en 3D
+||Usado en videojuegos y gráficos 3D|
+|**Árboles para Datos Específicos**||
+|Árbol de Expresión|Representa expresiones matemáticas
+||Hojas son operandos, nodos internos son operadores
+||Usado en compiladores|
+|Árbol de Huffman|Árbol de codificación para compresión
+||Construido basado en frecuencias
+||Óptimo para codificación de prefijos|
+|Árbol de Fenwick (BIT)|Estructura para sumas acumulativas
+||Operaciones eficientes de actualización y consulta
+||Usado en problemas de rango dinámico|
+

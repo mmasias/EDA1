@@ -1,0 +1,63 @@
+@startuml
+digraph splay_sequence {
+    compound=true;
+    node [shape = box];
+    
+    subgraph cluster_0 {
+        label = "Estado Inicial"
+        
+        A1[label="20"]
+        B1[label="10"]
+        C1[label="30"]
+        D1[label="5"]
+        E1[label="15"]
+        F1[label="25"]
+        G1[label="35"]
+        
+        A1 -> B1
+        A1 -> C1
+        B1 -> D1
+        B1 -> E1
+        C1 -> F1
+        C1 -> G1
+    }
+    
+    subgraph cluster_1 {
+        label = "Después de acceder a 5"
+        
+        A2[label="5"]
+        B2[label="20"]
+        C2[label="10"]
+        D2[label="30"]
+        E2[label="15"]
+        F2[label="25"]
+        G2[label="35"]
+        
+        A2 -> C2
+        C2 -> E2
+        B2 -> A2
+        B2 -> D2
+        D2 -> F2
+        D2 -> G2
+    }
+
+    subgraph cluster_2 {
+        label = "Después de acceder a 35"
+        
+        A3[label="35"]
+        B3[label="5"]
+        C3[label="30"]
+        D3[label="20"]
+        E3[label="10"]
+        F3[label="25"]
+        G3[label="15"]
+        
+        A3 -> C3
+        C3 -> D3
+        D3 -> E3
+        E3 -> G3
+        D3 -> F3
+        B3 -> E3
+    }
+}
+@enduml

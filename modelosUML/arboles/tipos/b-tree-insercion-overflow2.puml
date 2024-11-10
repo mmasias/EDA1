@@ -1,0 +1,51 @@
+@startuml
+digraph b_tree_sequence {
+    compound=true;
+    node [shape = record, height = .1];
+    
+    subgraph cluster_0 {
+        label = "Estado Inicial\n(Queremos insertar 48)"
+        
+        n0_0[label = "<f0> |<f1> 30|<f2> 60 |<f3>"];
+        n0_1[label = "<f0> |<f1> 10|<f2> 20 |<f3>"];
+        n0_2[label = "<f0> |<f1> 40|<f2> 46|<f3> 50 |<f4>", style=filled, fillcolor=lightgray];
+        n0_3[label = "<f0> |<f1> 70|<f2> 80 |<f3>"];
+        n0_8[label = "<f0> |<f1> 45 |<f2>"];
+        n0_9[label = "<f0> |<f1> 47 |<f2>"];
+        
+        n0_0:f1 -> n0_2;
+        n0_2:f1 -> n0_8;
+        n0_2:f2 -> n0_9;
+    }
+    
+    subgraph cluster_1 {
+        label = "Primer Split: 48 causa overflow en nodo hoja"
+        
+        n1_0[label = "<f0> |<f1> 30|<f2> 60 |<f3>"];
+        n1_2[label = "<f0> |<f1> 40|<f2> 46|<f3> 47|<f4> 50 |<f5>", style=filled, fillcolor=pink];
+        n1_8[label = "<f0> |<f1> 45 |<f2>"];
+        n1_9[label = "<f0> |<f1> 47|<f2> 48 |<f3>"];
+        
+        n1_0:f1 -> n1_2;
+        n1_2:f2 -> n1_9;
+    }
+    
+    subgraph cluster_2 {
+        label = "Split en nodo padre\n(47 sube a la raíz)"
+        
+        n2_0[label = "<f0> |<f1> 30|<f2> 47|<f3> 60 |<f4>", style=filled, fillcolor=lightblue];
+        n2_2[label = "<f0> |<f1> 40|<f2> 46 |<f3>"];
+        n2_3[label = "<f0> |<f1> 48|<f2> 50 |<f3>"];
+        n2_8[label = "<f0> |<f1> 45 |<f2>"];
+        n2_9[label = "<f0> |<f1> 47 |<f2>"];
+        n2_10[label = "<f0> |<f1> 49 |<f2>"];
+        
+        n2_0:f1 -> n2_2;
+        n2_0:f2 -> n2_3;
+        n2_2:f1 -> n2_8;
+        n2_2:f2 -> n2_9;
+        n2_3:f1 -> n2_10;
+    }
+
+}
+@enduml
