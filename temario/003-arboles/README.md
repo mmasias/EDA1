@@ -106,15 +106,15 @@ Consiste en **nodos** conectados.
 
 |Operación|Descripción|
 |-|-|
+|[Inserción](inserciones.md)|Agregar nodos respetando las propiedades del árbol|
+||Como hoja|
+||En una posición específica|
+||Manteniendo el orden (en árboles ordenados)|
 |[Recorrido](recorridos.md)|Visitar todos los nodos en un orden específico|
 ||Preorden (raíz, izquierda, derecha)|
 ||Inorden (izquierda, raíz, derecha)|
 ||Postorden (izquierda, derecha, raíz)|
 ||Por niveles (nivel a nivel, de izquierda a derecha)|
-|[Inserción](inserciones.md)|Agregar nodos respetando las propiedades del árbol|
-||Como hoja|
-||En una posición específica|
-||Manteniendo el orden (en árboles ordenados)|
 |Búsqueda|Encontrar un nodo específico|
 ||Por valor|
 ||Por posición|
