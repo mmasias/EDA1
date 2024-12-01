@@ -8,7 +8,7 @@
 - [Listas](002-00-listas/README.md) / [Pilas](002-01-pilas/README.md) / [Colas](002-02-colas/README.md)
 - [Árboles](003-arboles/README.md)
 - Grafos
-- Ficheros
+- [Ficheros](005-ficheros/README.md)
 
 ## Temario++
 
