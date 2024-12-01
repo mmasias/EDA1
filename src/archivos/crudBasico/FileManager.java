@@ -91,6 +91,49 @@ public class FileManager {
         }
     }
 
+    public boolean deleteFile() {
+        File archivo = new File(filePath);
+        if (!archivo.exists()) {
+            System.err.println("El archivo no existe");
+            return false;
+        }
+        return archivo.delete();
+    }
+
+    public boolean deleteLine(int lineNumber) {
+        int totalLines = countLines();
+        if (lineNumber < 1 || lineNumber > totalLines) {
+            System.err.println("Número de línea fuera de rango");
+            return false;
+        }
+
+        String[] lines = new String[totalLines];
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            for (int i = 0; i < totalLines; i++) {
+                lines[i] = reader.readLine();
+            }
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+            return false;
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (int i = 0; i < lines.length; i++) {
+                if (i + 1 != lineNumber) {
+                    writer.write(lines[i]);
+                    if (i < lines.length - 1) {
+                        writer.newLine();
+                    }
+                }
+            }
+            return true;
+        } catch (IOException e) {
+            System.err.println("Error al escribir el archivo: " + e.getMessage());
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         FileManager manager = new FileManager("ejemplo.txt");
 
@@ -124,5 +167,29 @@ public class FileManager {
         System.out.println("=== CONTENIDO ACTUALIZADO ===");
         contenido = manager.readFile();
         System.out.println(contenido);
+        new Scanner(System.in).nextLine();
+
+        System.out.println("=== ELIMINANDO LÍNEA 3 ===");
+        boolean eliminado = manager.deleteLine(3);
+
+        if (eliminado) {
+            System.out.println("Línea eliminada con éxito");
+        } else {
+            System.out.println("Error al eliminar la línea");
+        }
+        new Scanner(System.in).nextLine();
+
+        System.out.println("=== CONTENIDO TRAS ELIMINAR LÍNEA ===");
+        contenido = manager.readFile();
+        System.out.println(contenido);
+        new Scanner(System.in).nextLine();
+
+        System.out.println("=== ELIMINANDO ARCHIVO COMPLETO ===");
+        if (manager.deleteFile()) {
+            System.out.println("Archivo eliminado con éxito");
+        } else {
+            System.out.println("Error al eliminar el archivo");
+        }
+        new Scanner(System.in).nextLine();
     }
 }
