@@ -1,15 +1,11 @@
 package archivos.crudBasico;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class FileManager {
     private final String filePath;
+    private static final int MAX_LINES = 1000;
 
     public FileManager(String filePath) {
         this.filePath = filePath;
@@ -17,7 +13,7 @@ public class FileManager {
 
     public boolean createFile(String content) {
         File archivo = new File(filePath);
-        
+
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo))) {
             writer.write(content);
             return true;
@@ -49,29 +45,84 @@ public class FileManager {
         }
     }
 
+    private int countLines() {
+        int count = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            while (reader.readLine() != null) {
+                count++;
+            }
+        } catch (IOException e) {
+            System.err.println("Error al contar líneas: " + e.getMessage());
+        }
+        return count;
+    }
+
+    public boolean updateLine(int lineNumber, String newLine) {
+        int totalLines = countLines();
+        if (lineNumber < 1 || lineNumber > totalLines) {
+            System.err.println("Número de línea fuera de rango");
+            return false;
+        }
+
+        String[] lines = new String[totalLines];
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            for (int i = 0; i < totalLines; i++) {
+                lines[i] = reader.readLine();
+            }
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+            return false;
+        }
+
+        lines[lineNumber - 1] = newLine;
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (int i = 0; i < lines.length; i++) {
+                writer.write(lines[i]);
+                if (i < lines.length - 1) {
+                    writer.newLine();
+                }
+            }
+            return true;
+        } catch (IOException e) {
+            System.err.println("Error al escribir el archivo: " + e.getMessage());
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         FileManager manager = new FileManager("ejemplo.txt");
-        
-        String contenido = "Primera línea de texto\n" +
-                         "Segunda línea de texto\n" +
-                         "Tercera línea de texto";
-        
-        System.out.println("Creando archivo...");
-        boolean resultado = manager.createFile(contenido);
-        
-        new Scanner(System.in).nextLine();
 
-        if (resultado) {
-            System.out.println("Archivo creado exitosamente");
-            
-            System.out.println("Leyendo archivo...");
-            String contenidoLeido = manager.readFile();
-            if (contenidoLeido != null) {
-                System.out.println("Contenido del archivo:");
-                System.out.println(contenidoLeido);
-            }
+        System.out.println("=== CREACIÓN DE ARCHIVO ===");
+        String contenidoInicial = "Línea uno: introducción\n" +
+                "Línea dos: desarrollo\n" +
+                "Línea tres: conclusión";
+        boolean creado = manager.createFile(contenidoInicial);
+        if (creado) {
+            System.out.println("Archivo creado con éxito");
         } else {
             System.out.println("Error al crear el archivo");
         }
+        new Scanner(System.in).nextLine();
+
+        System.out.println("=== CONTENIDO ORIGINAL ===");
+        String contenido = manager.readFile();
+        System.out.println(contenido);
+        new Scanner(System.in).nextLine();
+
+        System.out.println("=== MODIFICANDO LÍNEA 2 ===");
+        boolean modificado = manager.updateLine(2, "Línea dos: CONTENIDO MODIFICADO");
+
+        if (modificado) {
+            System.out.println("Línea modificada con éxito");
+        } else {
+            System.out.println("Error al modificar la línea");
+        }
+        new Scanner(System.in).nextLine();
+
+        System.out.println("=== CONTENIDO ACTUALIZADO ===");
+        contenido = manager.readFile();
+        System.out.println(contenido);
     }
 }
