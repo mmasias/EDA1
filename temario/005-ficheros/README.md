@@ -2,7 +2,7 @@
 
 ## ¿Por qué?
 
-No es solo una alternativa de almacenamiento, sino de una necesidad fundamental en la arquitectura de cualquier sistema informático robusto que surge de varias limitaciones y requerimientos fundamentales en el desarrollo de software.
+No es solo una alternativa de almacenamiento, sino una necesidad fundamental en la arquitectura de cualquier sistema informático robusto que surge por las limitaciones y requerimientos fundamentales en el desarrollo de software.
 
 |La memoria principal|Requisitos de persistencia en aplicaciones reales|Necesidades de intercambio y comunicación|Aspectos legales y de cumplimiento|Gestión de recursos del sistema
 |-|-|-|-|-
