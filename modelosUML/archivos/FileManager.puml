@@ -1,0 +1,11 @@
+class FileManager{
+    - final String filePath;
+    - {static} final int MAX_LINES = 1000;
+    + FileManager(String filePath)
+    + boolean createFile(String content)
+    + String readFile()
+    + boolean updateLine(int lineNumber, String newLine)
+    + boolean deleteFile()
+    + boolean deleteLine(int lineNumber)   
+    -int countLines()
+}
