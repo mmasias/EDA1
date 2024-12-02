@@ -1,0 +1,68 @@
+hide empty members
+hide circle
+
+class ErrorManagement {
+    <<interface>>
+}
+
+class InternalErrorHandler {
+    #assert condition : message
+    +validatePreconditions(parameters)
+    +validateInvariants(state)
+    +validatePostconditions(result)
+}
+
+note left
+    <b>Errores de programación</b>
+    <b><i>Validaciones con assert</i></b>
+    - Detectables en desarrollo
+    - No recuperables
+    - Precondiciones, invariantes
+end note
+
+class ExternalErrorHandler {
+    +try operationWithExternalDependency()
+    +catch handleError(error)
+    +finally cleanupResources()
+}
+
+note right
+    <b>Errores de ejecución</b>
+    <b><i>Try-catch-finally</i></b>
+    - Ocurren en producción
+    - Recuperables
+    - Plan de contingencia"
+end note
+
+class BusinessLogic {
+    +executeOperation()
+}
+
+class ExternalDependency {
+    <<interface>>
+    +operation()
+}
+
+class FileSystem {
+    +readFile()
+    +writeFile()
+}
+
+class Database {
+    +connect()
+    +query()
+}
+
+class Network {
+    +sendRequest()
+    +receiveResponse()
+}
+
+ErrorManagement <|-- InternalErrorHandler : implements
+ErrorManagement <|-- ExternalErrorHandler : implements
+BusinessLogic --> InternalErrorHandler : uses
+BusinessLogic --> ExternalErrorHandler : uses
+ExternalErrorHandler --> ExternalDependency : handles
+ExternalDependency <|-- FileSystem : implements
+ExternalDependency <|-- Database : implements
+ExternalDependency <|-- Network : implements

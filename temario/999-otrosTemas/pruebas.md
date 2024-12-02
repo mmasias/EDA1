@@ -8,6 +8,12 @@ La gestión de errores permite a los desarrolladores controlar el flujo del prog
 
 ## ¿Qué?
 
+|Error interno|Error externo|
+|-|-|
+|Es un error de programación|Es un error que puede ocurrir por circunstancias externas (archivo borrado, sin permisos, etc.)
+|Se detecta durante el desarrollo/pruebas (con assertions habilitadas)|Se maneja durante la ejecución porque puede ocurrir en cualquier momento
+|No requiere recuperación en producción porque no debería ocurrir|Requiere un plan de recuperación (usar valor por defecto, notificar al usuario, etc.)
+
 En Java, hay varias maneras de manejar errores, pero dos de las más comunes son assert y los bloques try-catch-finally.
 
 |||
@@ -23,6 +29,14 @@ Assert|Se utiliza para validar suposiciones hechas por el programador durante el
 Try-Catch|Es fundamental para la gestión de errores en tiempo de ejecución. Se utiliza para manejar excepciones de manera que el programa pueda continuar o cerrarse de manera controlada. Permite a los desarrolladores escribir código que es resistente a fallos y capaz de manejar situaciones imprevistas, como entradas de usuario incorrectas, fallas en la conexión a bases de datos, o errores al leer/escribir archivos.
 
 ## ¿Cómo?
+
+<div align=center>
+
+![](/images/modelosUML/errores.svg)
+
+</div>
+
+
 
 ### Assert
 
