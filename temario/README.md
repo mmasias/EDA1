@@ -7,7 +7,7 @@
 - [Estructuras de datos & conceptos fundamentales](001-intro/primitivasMatricesClasesObjetos.md)
 - [Listas](002-00-listas/README.md) / [Pilas](002-01-pilas/README.md) / [Colas](002-02-colas/README.md)
 - [Árboles](003-arboles/README.md)
-- [Grafos](004-grafos/READMD.md)
+- [Grafos](004-grafos/README.md)
 - [Ficheros](005-ficheros/README.md)
 
 ## Temario++
