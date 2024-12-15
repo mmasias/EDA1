@@ -1,0 +1,26 @@
+@startuml
+
+node "Opera L1" as opera
+node "Callao L1" as callao
+node "Sol L1 / L3" as sol
+node "Tribunal L1 / L2" as tribunal
+node "Bilbao L1" as bilbao
+node "Noviciado L2" as noviciado
+node "Quevedo L2" as quevedo
+node "Canal L2" as canal
+node "Moncloa L3" as moncloa
+node "Ventura L3" as ventura
+node "PlazaEspaña L3" as plazaEsp
+
+opera -- callao
+callao -- sol
+sol -- tribunal
+tribunal -- bilbao
+noviciado -- tribunal
+tribunal -- quevedo
+quevedo -- canal
+moncloa -- ventura
+ventura -- sol
+sol -- plazaEsp
+
+@enduml

@@ -85,3 +85,7 @@ Implementada la versión básica, le agregaremos la capacidad de verificar si ex
 |[vBasico02](/src/grafos/basico02/)
 
 </div>
+
+### A partir de aquí
+
+[🚬](🚬grafos.md)

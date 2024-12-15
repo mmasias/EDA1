@@ -1,0 +1,40 @@
+@startuml
+' Línea 1 (Roja)
+node "Opera L1" as opera
+node "Callao L1" as callao
+node "Sol L1" as sol1
+node "Sol L3" as sol3
+node "Tribunal L1" as trib1
+node "Tribunal L2" as trib2
+node "Bilbao L1" as bilbao
+
+' Línea 2 (Azul)
+node "Noviciado L2" as noviciado
+node "Quevedo L2" as quevedo
+node "Canal L2" as canal
+
+' Línea 3 (Verde)
+node "Moncloa L3" as moncloa
+node "Ventura L3" as ventura
+node "PlazaEspaña L3" as plazaEsp
+
+' Conexiones Línea 1
+opera -- callao: 4 min
+callao -- sol1: 2 min
+sol1 -- trib1: 2 min
+trib1 -- bilbao: 3 min
+
+' Conexiones Línea 2
+noviciado -- trib2: 5 min
+trib2 -- quevedo: 5 min
+quevedo -- canal: 4 min
+
+' Conexiones Línea 3
+moncloa -- ventura: 5 min
+ventura -- sol3: 4 min
+sol3 -- plazaEsp: 3 min
+
+' Transbordos
+sol1 .. sol3: 4 min
+trib1 .. trib2: 3 min
+@enduml

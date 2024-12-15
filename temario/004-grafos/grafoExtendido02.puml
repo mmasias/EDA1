@@ -1,0 +1,26 @@
+@startuml
+
+node "Opera L1" as opera
+node "Callao L1" as callao
+node "Sol L1 / L3" as sol
+node "Tribunal L1 / L2" as tribunal
+node "Bilbao L1" as bilbao
+node "Noviciado L2" as noviciado
+node "Quevedo L2" as quevedo
+node "Canal L2" as canal
+node "Moncloa L3" as moncloa
+node "Ventura L3" as ventura
+node "PlazaEspaña L3" as plazaEsp
+
+opera -- callao: 4 min
+callao -- sol: 2 min
+sol -- tribunal: 2 min
+tribunal -- bilbao: 3 min
+noviciado -- tribunal: 5 min
+tribunal -- quevedo: 5 min
+quevedo -- canal: 4 min
+moncloa -- ventura: 5 min
+ventura -- sol: 4 min
+sol -- plazaEsp: 3 min
+
+@enduml
