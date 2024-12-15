@@ -45,31 +45,45 @@ public class Graph {
             System.out.println();
         }
     }    
+
     public boolean hasPath(int from, int to) {
-        boolean[] visited = new boolean[countOfNodes];
+
         Node startNode = findNode(from);
-        return startNode != null && hasPathDFS(startNode, to, visited);
-    }
-
-    private boolean hasPathDFS(Node current, int target, boolean[] visited) {
-        if (current.getData() == target) {
-            return true;
-        }
-
-        int currentIndex = findNodeIndex(current.getData());
-        visited[currentIndex] = true;
-
-        for (int i = 0; i < current.getCountOfNeighbors(); i++) {
-            Node neighbor = current.getNeighbors()[i];
-            int neighborIndex = findNodeIndex(neighbor.getData());
-            if (!visited[neighborIndex]) {
-                if (hasPathDFS(neighbor, target, visited)) {
-                    return true;
+    
+        boolean[] visited = new boolean[countOfNodes];
+        Node[] stack = new Node[countOfNodes];
+        int stackPointer = 0;
+    
+        stack[stackPointer] = startNode;
+        stackPointer++;
+    
+        while (stackPointer > 0) {
+            stackPointer--;
+            Node current = stack[stackPointer];
+            int currentIndex = findNodeIndex(current.getData());
+    
+            if (visited[currentIndex]) {
+                continue;
+            }
+            visited[currentIndex] = true;
+    
+            if (current.getData() == to) {
+                return true;
+            }
+    
+            for (int i = 0; i < current.getCountOfNeighbors(); i++) {
+                Node neighbor = current.getNeighbors()[i];
+                int neighborIndex = findNodeIndex(neighbor.getData());
+                if (!visited[neighborIndex]) {
+                    stack[stackPointer] = neighbor;
+                    stackPointer++;
                 }
             }
         }
+    
         return false;
     }    
+
     private int findNodeIndex(int data) {
         for (int i = 0; i < countOfNodes; i++) {
             if (nodes[i].getData() == data) {

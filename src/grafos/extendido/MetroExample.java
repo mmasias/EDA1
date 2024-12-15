@@ -54,5 +54,9 @@ public class MetroExample {
         metro.printNeighbors("Ventura", 3);
         metro.printNeighbors("Sol", 3);
         metro.printNeighbors("PlazaEspaña", 3);
+
+        System.out.println("Búsqueda de rutas:");
+        System.out.println(metro.findPath("Opera", 1, "Callao", 1));
+
     }
 }

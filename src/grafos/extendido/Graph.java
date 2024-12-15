@@ -50,4 +50,90 @@ public class Graph {
             System.out.println();
         }
     }
+
+    public String findPath(String fromStation, int fromLine, String toStation, int toLine) {
+        
+        Node start = findNode(fromStation, fromLine);
+        Node end = findNode(toStation, toLine);
+        
+        Node[] stack = new Node[countOfNodes];
+        int stackSize = 0;
+        
+        Node[] predecessor = new Node[countOfNodes];
+        int[] timeToReach = new int[countOfNodes];
+        boolean[] visited = new boolean[countOfNodes];
+        
+        stack[stackSize] = start;
+        stackSize++;
+        visited[findNodeIndex(start)] = true;
+
+        boolean found = false;
+        while (stackSize > 0 && !found) {
+            stackSize--;
+            Node current = stack[stackSize];
+            
+            for (int i = 0; i < current.getCountOfNeighbors() && !found; i++) {
+                Node neighbor = current.getNeighbors()[i];
+                int neighborIndex = findNodeIndex(neighbor);
+                
+                if (!visited[neighborIndex]) {
+                    visited[neighborIndex] = true;
+                    stack[stackSize] = neighbor;
+                    stackSize++;
+                    predecessor[neighborIndex] = current;
+                    timeToReach[neighborIndex] = current.getTimes()[i];
+                    if (neighbor == end) {
+                        found = true;
+                    }
+                }
+            }
+        }
+
+        if (!found) {
+            return "No hay ruta disponible";
+        }
+
+        Node[] path = new Node[countOfNodes];
+        int[] times = new int[countOfNodes];
+        int pathLength = 0;
+        
+        Node current = end;
+        while (current != start) {
+            path[pathLength] = current;
+            int currentIndex = findNodeIndex(current);
+            times[pathLength] = timeToReach[currentIndex];
+            current = predecessor[currentIndex];
+            pathLength++;
+        }
+        path[pathLength++] = start;
+
+        String route = "Ruta de " + start + " a " + end + ":";
+        int totalTime = 0;
+
+        for (int i = pathLength - 1; i > 0; i--) {
+            Node currentNode = path[i];
+            Node nextNode = path[i-1];
+            
+            route = route + currentNode;
+            if (currentNode.getLine() != nextNode.getLine()) {
+                route = route + " → TRANSBORDO → ";
+            } else {
+                route = route + " → ";
+            }
+            totalTime = totalTime + times[i-1];
+        }
+        route = route + end;
+        route = route + " > Tiempo total: " + totalTime + " minutos";
+        
+        return route;
+    }
+
+    private int findNodeIndex(Node node) {
+        for (int i = 0; i < countOfNodes; i++) {
+            if (nodes[i] == node) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
