@@ -31,6 +31,8 @@ Los grafos son ideales para representar:
 
 ## ¿Cómo?
 
+<div align=center>
+
 |Lista|Árbol|Grafo|
 |-|-|-|
 |Un nodo necesitaba:|El nodo evolucionó para tener:|El nodo necesita "expandirse" para:
@@ -39,12 +41,25 @@ Los grafos son ideales para representar:
 ||- Quizás una referencia al padre|- No hay conceptos de "siguiente", "hijo" o "padre" - todos son simplemente "vecinos"
 |||- Las conexiones son más libres y podrían ser muchas
 
+</div>
+
+### Versión básica
+
 En su forma más básica un nodo de grafo necesita:
+
+<div align=center>
 
 |¿Qué?|¿Cómo?|
 |-|-|
 |Almacenar un valor.|En nuestro caso, un número.|
 |Saber con qué otros nodos está conectado|En nuestro caso, un array de referencias a otros nodos.|
+
+---
+
+|[vPrimitiva](/src/grafos/primitivo/)|[vBásica](/src/grafos/basico/)|
+|-|-|
+
+</div>
 
 Esta implementación básica nos permite:
 
@@ -58,3 +73,15 @@ La simplicidad de esta implementación nos permitirá ir añadiendo funcionalida
 - Pesos en las conexiones (grafos ponderados)
 - Métodos de recorrido
 - Algoritmos de búsqueda
+
+### Caminos entre dos nodos
+
+Implementada la versión básica, le agregaremos la capacidad de verificar si existe un camino entre dos nodos.
+
+<div align=center>
+
+|![](/images/temario/004-grafos/grafos.svg)
+|:-:
+|[vBasico02](/src/grafos/basico02/)
+
+</div>
