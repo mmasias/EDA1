@@ -1,0 +1,13 @@
+@startuml
+
+node n1
+node n2
+node n3
+node n4
+
+n1 -- n2
+n1 -- n3
+n2 -- n3
+n3 -- n4
+
+@enduml
