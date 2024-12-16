@@ -105,7 +105,8 @@ public class Graph {
             current = predecessor[currentIndex];
             pathLength++;
         }
-        path[pathLength++] = start;
+        path[pathLength] = start;
+        pathLength++;
 
         String route = "Ruta de " + start + " a " + end + ":";
         int totalTime = 0;

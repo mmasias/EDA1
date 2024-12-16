@@ -6,7 +6,9 @@
 
 ![](/images/temario/004-grafos/grafos.svg)
 
-[🚶](🚶.md)
+> [🚶](🚶.md)
+
+![](/images/temario/004-grafos/masGrafos.svg)
 
 ---
 

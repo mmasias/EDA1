@@ -62,21 +62,20 @@ public class Graph {
             Node current = stack[stackPointer];
             int currentIndex = findNodeIndex(current.getData());
     
-            if (visited[currentIndex]) {
-                continue;
-            }
-            visited[currentIndex] = true;
-    
-            if (current.getData() == to) {
-                return true;
-            }
-    
-            for (int i = 0; i < current.getCountOfNeighbors(); i++) {
-                Node neighbor = current.getNeighbors()[i];
-                int neighborIndex = findNodeIndex(neighbor.getData());
-                if (!visited[neighborIndex]) {
-                    stack[stackPointer] = neighbor;
-                    stackPointer++;
+            if (!visited[currentIndex]) {
+                visited[currentIndex] = true;
+        
+                if (current.getData() == to) {
+                    return true;
+                }
+        
+                for (int i = 0; i < current.getCountOfNeighbors(); i++) {
+                    Node neighbor = current.getNeighbors()[i];
+                    int neighborIndex = findNodeIndex(neighbor.getData());
+                    if (!visited[neighborIndex]) {
+                        stack[stackPointer] = neighbor;
+                        stackPointer++;
+                    }
                 }
             }
         }
