@@ -5,90 +5,118 @@ public class Graph {
     private int countOfNodes;
     
     public Graph(int maxNodes) {
+
+        if (maxNodes < 1) {
+            throw new IllegalArgumentException("El número máximo de nodos debe ser al menos 1");
+        }
+
         nodes = new Node[maxNodes];
         countOfNodes = 0;
     }
 
-    public void addNode(int data) {
-        if (countOfNodes < nodes.length) {
-            nodes[countOfNodes] = new Node(data);
-            countOfNodes++;
-        }
+    private Node createNode(int data) {
+        countOfNodes++;
+        return new Node(data);
     }
-
+    
+    public void addNode(int data) {
+        if (findNode(data) != null) {
+            System.out.println("El nodo " + data + " ya existe en el grafo");
+            return;
+        }
+        if (countOfNodes >= nodes.length) {
+            System.out.println("El grafo está lleno");
+            return;
+        }
+        nodes[countOfNodes] = createNode(data);
+    }
+    
     public void addEdge(int from, int to) {
         Node nodeFrom = findNode(from);
         Node nodeTo = findNode(to);
         
-        if (nodeFrom != null && nodeTo != null) {
-            nodeFrom.addNeighbor(nodeTo);
-            nodeTo.addNeighbor(nodeFrom);
+        if (nodeFrom == null || nodeTo == null) {
+            System.out.println("No se encontró el nodo origen o destino");
+            return;
         }
+
+        nodeFrom.addNeighbor(nodeTo);
+        nodeTo.addNeighbor(nodeFrom);
     }
 
-    private Node findNode(int data) {
+    public Node findNode(int data) {
+        NodeIndexPair pair = findNodeIndexPair(data);
+        return pair == null ? null : pair.getNode();
+    }
+    
+    private NodeIndexPair findNodeIndexPair(int data) {
         for (int i = 0; i < countOfNodes; i++) {
             if (nodes[i].getData() == data) {
-                return nodes[i];
+                return new NodeIndexPair(nodes[i], i);
             }
         }
         return null;
     }
+    
 
+    
     public void printNeighbors(int nodeData) {
         Node node = findNode(nodeData);
-        if (node != null) {
-            System.out.print("El nodo " + nodeData + " está conectado con: ");
-            for (int i = 0; i < node.getCountOfNeighbors(); i++) {
-                System.out.print(node.getNeighbors()[i].getData() + " ");
-            }
-            System.out.println();
+        if (node == null) {
+            System.out.println("No se encontró el nodo " + nodeData);
+            return;
         }
-    }    
 
+        System.out.print("El nodo " + nodeData + " está conectado con: ");
+        Node[] neighbors = node.getNeighbors();
+        for (int i = 0; i < node.getCountOfNeighbors(); i++) {
+            System.out.print(neighbors[i].getData() + " ");
+        }
+        System.out.println();
+    }    
+    
     public boolean hasPath(int from, int to) {
-
-        Node startNode = findNode(from);
-    
+        
+        NodeIndexPair fromNode = findNodeIndexPair(from);
+        NodeIndexPair toNode = findNodeIndexPair(to);
+        
+        if (fromNode == null || toNode == null) {
+            System.out.println("No se encontró el nodo origen o destino");
+            return false;
+        }
+        
         boolean[] visited = new boolean[countOfNodes];
-        Node[] stack = new Node[countOfNodes];
-        int stackPointer = 0;
-    
-        stack[stackPointer] = startNode;
-        stackPointer++;
-    
-        while (stackPointer > 0) {
-            stackPointer--;
-            Node current = stack[stackPointer];
-            int currentIndex = findNodeIndex(current.getData());
-    
-            if (!visited[currentIndex]) {
-                visited[currentIndex] = true;
+        NodeIndexPair[] stack = new NodeIndexPair[countOfNodes];
+        int stackPointer = -1;
         
-                if (current.getData() == to) {
-                    return true;
-                }
+        stack[++stackPointer] = fromNode;
         
-                for (int i = 0; i < current.getCountOfNeighbors(); i++) {
-                    Node neighbor = current.getNeighbors()[i];
-                    int neighborIndex = findNodeIndex(neighbor.getData());
-                    if (!visited[neighborIndex]) {
-                        stack[stackPointer] = neighbor;
-                        stackPointer++;
-                    }
+        while (stackPointer >= 0) {
+            NodeIndexPair currentNodeIndex = stack[stackPointer--];
+            
+            Node currentNode = currentNodeIndex.getNode();
+            if (currentNode == toNode.getNode()) return true;
+            
+            int currentIndex = currentNodeIndex.getIndex();
+            
+            if (visited[currentIndex]) continue;
+            visited[currentIndex] = true;
+            
+            Node[] neighbors = currentNode.getNeighbors();
+            for (int i = 0; i < currentNode.getCountOfNeighbors(); i++) {
+                int neighborIndex = findNodeIndex(neighbors[i].getData());
+                if (!visited[neighborIndex]) {
+                    stack[++stackPointer] = new NodeIndexPair(neighbors[i], neighborIndex);
                 }
             }
         }
-    
+        
         return false;
-    }    
-
-    private int findNodeIndex(int data) {
-        for (int i = 0; i < countOfNodes; i++) {
-            if (nodes[i].getData() == data) {
-                return i;
-            }
-        }
-        return -1;
-    }    
+    }
+    
+    public int findNodeIndex(int data) {
+        NodeIndexPair pair = findNodeIndexPair(data);
+        return pair == null ? -1 : pair.getIndex();
+    }
+    
 }
