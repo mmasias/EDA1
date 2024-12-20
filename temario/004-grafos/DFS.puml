@@ -1,0 +1,20 @@
+
+    [*] --> Esperando: Iniciar búsqueda
+    
+    Esperando --> NodoSinProcesar: Crear pila e\nInicializar visitados
+
+    NodoSinProcesar: Tomar primer nodo
+    
+    NodoSinProcesar --> NodoVisitado: Marcar como visitado
+    
+    state Llego <<choice>>
+
+    NodoVisitado --> Llego
+    Llego --> NodoMeta: Es destino?
+    Llego --> AnalizandoVecinos: No es destino
+    
+    AnalizandoVecinos --> NodoSinProcesar: Añadir vecinos no visitados\na la pila y tomar siguiente
+    AnalizandoVecinos --> SinCamino: No quedan vecinos\ny pila vacía
+    
+    NodoMeta --> [*]: Camino encontrado
+    SinCamino --> [*]: No existe camino
