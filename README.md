@@ -11,8 +11,7 @@
 ## Lecturas complementarias
 
 - [Acerca de las listas: qué son, qué no son, qué saben, qué no saben...](/temario/999-otrosTemas/acercaDeListas.md)
-- [Acerca de los árboles: qué son, qué no son, qué saben, qué no saben...](/
-temario/999-otrosTemas/acercaDeArboles.md)
+- [Acerca de los árboles: qué son, qué no son, qué saben, qué no saben...](/temario/999-otrosTemas/acercaDeArboles.md)
 - [Acerca de los grafos: qué son, qué no son, qué saben, qué no saben...](/temario/999-otrosTemas/acercaDeGrafos.md)
 - [Breve intro a la recursividad](/temario/999-otrosTemas/recursividad.md)
 - [Programación genérica](/temario/999-otrosTemas/programacionGenerica.md)
