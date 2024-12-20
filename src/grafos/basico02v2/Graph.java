@@ -1,4 +1,4 @@
-package grafos.basico02;
+package grafos.basico02v2;
 
 public class Graph {
     private Node[] nodes;
@@ -18,7 +18,7 @@ public class Graph {
         countOfNodes++;
         return new Node(data);
     }
-    
+
     public void addNode(int data) {
         if (findNode(data) != null) {
             System.out.println("El nodo " + data + " ya existe en el grafo");
@@ -30,24 +30,7 @@ public class Graph {
         }
         nodes[countOfNodes] = createNode(data);
     }
-    
-    public void addEdge(int from, int to) {
-        Node nodeFrom = findNode(from);
-        Node nodeTo = findNode(to);
-        
-        if (nodeFrom == null || nodeTo == null) {
-            System.out.println("No se encontró el nodo origen o destino");
-            return;
-        }
 
-        nodeFrom.addNeighbor(nodeTo);
-        nodeTo.addNeighbor(nodeFrom);
-    }
-
-    public Node findNode(int data) {
-        NodeIndexPair pair = findNodeIndexPair(data);
-        return pair == null ? null : pair.getNode();
-    }
     
     private NodeIndexPair findNodeIndexPair(int data) {
         for (int i = 0; i < countOfNodes; i++) {
@@ -58,7 +41,15 @@ public class Graph {
         return null;
     }
     
+    public Node findNode(int data) {
+        NodeIndexPair pair = findNodeIndexPair(data);
+        return pair == null ? null : pair.getNode();
+    }
 
+    public int findNodeIndex(int data) {
+        NodeIndexPair pair = findNodeIndexPair(data);
+        return pair == null ? -1 : pair.getIndex();
+    }
     
     public void printNeighbors(int nodeData) {
         Node node = findNode(nodeData);
@@ -74,31 +65,31 @@ public class Graph {
         }
         System.out.println();
     }    
-    
+
     public boolean hasPath(int from, int to) {
-        
+
         NodeIndexPair fromNode = findNodeIndexPair(from);
         NodeIndexPair toNode = findNodeIndexPair(to);
-        
+
         if (fromNode == null || toNode == null) {
             System.out.println("No se encontró el nodo origen o destino");
             return false;
         }
-        
+    
         boolean[] visited = new boolean[countOfNodes];
         NodeIndexPair[] stack = new NodeIndexPair[countOfNodes];
         int stackPointer = -1;
-        
+    
         stack[++stackPointer] = fromNode;
-        
+    
         while (stackPointer >= 0) {
             NodeIndexPair currentNodeIndex = stack[stackPointer--];
-            
+
             Node currentNode = currentNodeIndex.getNode();
             if (currentNode == toNode.getNode()) return true;
             
             int currentIndex = currentNodeIndex.getIndex();
-            
+
             if (visited[currentIndex]) continue;
             visited[currentIndex] = true;
             
@@ -110,13 +101,22 @@ public class Graph {
                 }
             }
         }
-        
+    
         return false;
     }
-    
-    public int findNodeIndex(int data) {
-        NodeIndexPair pair = findNodeIndexPair(data);
-        return pair == null ? -1 : pair.getIndex();
+
+    public void addEdge(int from, int to) {
+        Node nodeFrom = findNode(from);
+        Node nodeTo = findNode(to);
+        
+        if (nodeFrom == null || nodeTo == null) {
+            System.out.println("No se encontró el nodo origen o destino");
+            return;
+        }
+
+        nodeFrom.addNeighbor(nodeTo);
+        nodeTo.addNeighbor(nodeFrom);
     }
     
+
 }
