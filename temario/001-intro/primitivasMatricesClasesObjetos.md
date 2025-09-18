@@ -2,11 +2,11 @@
 
 ## Tipos primitivos
 
-Recordemos el concepto de variables [visto en Programación 1](https://github.com/mmasias/23-24-prg1/blob/main/temario/variables.md)
+Recordemos el concepto de variables [visto en Programación 1](https://github.com/mmasias/PRG1/blob/main/temario/00500-variables.md)
 
 |Tipos primitivos|
 |-|
-<img src="https://raw.githubusercontent.com/mmasias/23-24-prg1/e6aa945f3bbb90999a22d0894d17f021309bb156/imagenes/modelosUML/tiposPrimitivos.svg" />
+<img src="https://raw.githubusercontent.com/mmasias/PRG1/main/images/modelosUML/tiposPrimitivos.svg" />
 
 ---
 
