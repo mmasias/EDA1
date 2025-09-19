@@ -1,4 +1,4 @@
-package grafos.basico02;
+package grafos.basico02original;
 
 public class Example {
     public static void main(String[] args) {
@@ -22,30 +22,12 @@ public class Example {
         }
 
         System.out.println("Pruebas de caminos:");
-
-        System.out.println("¿Hay camino de 1 a 4? ");
-        System.out.println(graph.hasPath(1, 4));
-        System.out.println();
-
-        System.out.println("¿Hay camino de 10 a 12? ");
-        System.out.println(graph.hasPath(10, 12));
-        System.out.println();
-
-        System.out.println("¿Hay camino de 20 a 23? ");
-        System.out.println(graph.hasPath(20, 23));
-        System.out.println();
-
-        System.out.println("¿Hay camino de 5 a 10? ");
-        System.out.println(graph.hasPath(5, 10));
-        System.out.println();
-
-        System.out.println("¿Hay camino de 12 a 20? ");
-        System.out.println(graph.hasPath(12, 20));
-        System.out.println();
-
-        System.out.println("¿Hay camino de 4 a 22? ");
-        System.out.println(graph.hasPath(4, 22));
-        System.out.println();
+        System.out.println("¿Hay camino de 1 a 4? " + graph.hasPath(1, 4));
+        System.out.println("¿Hay camino de 10 a 12? " + graph.hasPath(10, 12));
+        System.out.println("¿Hay camino de 20 a 23? " + graph.hasPath(20, 23));
+        System.out.println("¿Hay camino de 5 a 10? " + graph.hasPath(5, 10));
+        System.out.println("¿Hay camino de 12 a 20? " + graph.hasPath(12, 20));
+        System.out.println("¿Hay camino de 4 a 22? " + graph.hasPath(4, 22));
     }
 
     static void configura(Graph graph){
