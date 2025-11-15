@@ -38,38 +38,26 @@ Consiste en **nodos** conectados.
 
 ## ¿Para qué?
 
+Representar datos jerárquicos|Facilitar búsquedas|Manejar datos ordenados
+|-|-|-|
+*Modelar estructuras con **relaciones padre-hijo***|*Optimizar la **búsqueda de elementos***|*Mantener elementos **en orden específico***
+|- Sistemas de archivos y directorios|- Árboles de búsqueda binaria (BST)|- Mantener elementos en orden específico
+|- Estructuras organizacionales|- Árboles AVL para búsquedas balanceadas|- Facilitar recorridos ordenados (inorden, preorden, postorden)
+|- Árboles genealógicos|- Índices en bases de datos|- Implementar diccionarios y mapas ordenados
+|- Estructuras DOM en páginas web|- Árboles B y B+ en sistemas de archivos|
+|- Documentos XML/JSON|
 |||
-|-|-|
-|**Representar datos jerárquicos**|Sistemas de archivos y directorios|
-||Estructuras organizacionales|
-||Árboles genealógicos|
-||Estructuras DOM en páginas web|
-||Documentos XML/JSON|
-|**Facilitar búsquedas**|Árboles de búsqueda binaria (BST)|
-||Árboles AVL para búsquedas balanceadas|
-||Índices en bases de datos|
-||Árboles B y B+ en sistemas de archivos|
-|**Manejar datos ordenados**|Mantener elementos en orden específico|
-||Facilitar recorridos ordenados (inorden, preorden, postorden)|
-||Implementar diccionarios y mapas ordenados|
-|**Optimizar operaciones**|Búsquedas más eficientes que en listas (O(log n) vs O(n))|
-||Inserciones y eliminaciones ordenadas|
-||Balanceo automático en estructuras avanzadas|
-|**Compilación y parsing**|[Árboles de sintaxis abstracta (AST)](ejemplos/AST.md)|
-||Evaluación de expresiones matemáticas|
-||Parseo de lenguajes de programación|
-|**Inteligencia Artificial**|Árboles de decisión en machine learning|
-||Árboles de juego en IA de videojuegos|
-||Árboles de búsqueda en sistemas expertos|
-|**Gráficos y videojuegos**|Octrees para particionamiento espacial|
-||BSP trees para renderizado 3D|
-||Árboles de colisiones|
-|**Sistemas operativos**|Gestión de procesos y threads|
-||Sistemas de archivos|
-||Gestión de memoria|
-|**Redes y comunicaciones**|Tablas de enrutamiento|
-||Árboles de spanning en redes|
-||Protocolos de comunicación jerárquicos|
+**Optimizar operaciones**|**Compilación y parsing**|**Inteligencia Artificial**
+*Mejorar la **eficiencia** de operaciones*|*Analizar y **procesar lenguajes***|*Tomar **decisiones** y resolver problemas*
+|- Búsquedas más eficientes que en listas (O(log n) vs O(n))|- [Árboles de sintaxis abstracta (AST)](ejemplos/AST.md)|- Árboles de decisión en machine learning
+|- Inserciones y eliminaciones ordenadas|- Evaluación de expresiones matemáticas|- Árboles de juego en IA de videojuegos
+|- Balanceo automático en estructuras avanzadas|- Parseo de lenguajes de programación|- Árboles de búsqueda en sistemas expertos
+|||
+**Gráficos y videojuegos**|**Sistemas operativos**|**Redes y comunicaciones**
+*Optimizar **renderizado** y detección de colisiones*|*Gestionar **recursos del sistema***|*Organizar **topologías** y protocolos de red*
+|- Octrees para particionamiento espacial|- Gestión de procesos y threads|- Tablas de enrutamiento
+|- BSP trees para renderizado 3D|- Sistemas de archivos|- Árboles de spanning en redes
+|- Árboles de colisiones|- Gestión de memoria|- Protocolos de comunicación jerárquicos
 
 ## ¿Cómo?
 
@@ -86,8 +74,6 @@ Consiste en **nodos** conectados.
 
 </div>
 
-[vCompleta](caracteristicasCompleta.md)
-
 ||||
 |-|-|-|
 |Nodo raíz|El nodo superior en un árbol, sin padres.|'a' es el nodo raíz|
@@ -100,66 +86,34 @@ Consiste en **nodos** conectados.
 |Grado|Número máximo de hijos que puede tener un nodo.|'a' tiene grado 2<br>'c' tiene grado 3|
 |Camino (path)|Secuencia de nodos conectados desde un nodo hasta otro.|De 'a' a 'f': a→c→f|
 
+> [Características (versión completa)](caracteristicasCompleta.md)
+
 ### Operaciones
 
 #### Básicas
 
-|Operación|Descripción|
-|-|-|
-|[Inserción](inserciones.md)|Agregar nodos respetando las propiedades del árbol|
-||Como hoja|
-||En una posición específica|
-||Manteniendo el orden (en árboles ordenados)|
-|[Recorrido](recorridos.md)|Visitar todos los nodos en un orden específico|
-||Preorden (raíz, izquierda, derecha)|
-||Inorden (izquierda, raíz, derecha)|
-||Postorden (izquierda, derecha, raíz)|
-||Por niveles (nivel a nivel, de izquierda a derecha)|
-|Búsqueda|Encontrar un nodo específico|
-||Por valor|
-||Por posición|
-||Por relación (padre, hijo, hermano)|
-|Eliminación|Remover nodos manteniendo la estructura del árbol|
-||Eliminación de hojas|
-||Eliminación de nodos internos (con restructuración)|
-||Eliminación preservando propiedades específicas|
+[Inserción](inserciones.md)|[Recorrido](recorridos.md)|Búsqueda|Eliminación|
+|-|-|-|-|
+*Agregar nodos **respetando las propiedades del árbol***|*Visitar todos los nodos **en un orden específico***|*Encontrar un nodo específico*|*Remover nodos **manteniendo la estructura del árbol***|
+|- Como hoja|- Preorden (raíz, izquierda, derecha)|- Por valor|- Eliminación de hojas|
+|- En una posición específica|- Inorden (izquierda, raíz, derecha)|Por posición|- Eliminación de nodos internos (con restructuración)|
+|- Manteniendo el orden (en árboles ordenados)|- Postorden (izquierda, derecha, raíz)|- Por relación (padre, hijo, hermano)|- Eliminación preservando propiedades específicas|
+||- Por niveles (nivel a nivel, de izquierda a derecha)|
 
 #### Avanzadas
 
-|Operación|Descripción|
-|-|-|
-|Cálculo de altura|Determinar la altura de:|
-||Todo el árbol|
-||Un nodo específico|
-||Un subárbol|
-|Búsqueda de ancestro común|Encontrar el ancestro común más cercano entre dos nodos:|
-||Por recorrido hacia arriba|
-||Por marcado de caminos|
-||Por comparación de profundidades|
-|Balanceo|Reorganizar el árbol para mantener balance:|
-||Rotaciones simples|
-||Rotaciones dobles|
-||Rebalanceo completo|
-|Clonación y copia|Crear copias del árbol:|
-||Copia superficial|
-||Copia profunda|
-||Copia parcial (subárboles)|
-|Operaciones de análisis|Calcular propiedades del árbol:|
-||Número de nodos|
-||Profundidad máxima/mínima|
-||Factor de ramificación|
-|Fusión y división|Operaciones estructurales complejas:|
-||Combinar dos árboles|
-||Dividir un árbol en subárboles|
-||Injertar subárboles|
-|Serialización|Convertir el árbol en una forma lineal:|
-||Para almacenamiento|
-||Para transmisión|
-||Para persistencia|
-|Validación|Verificar propiedades del árbol:|
-||Integridad estructural|
-||Propiedades específicas (como en BST)|
-||Restricciones de balance|
+Cálculo de altura|Búsqueda de ancestro común|Balanceo|Clonación y copia
+|-|-|-|-|
+*Determinar la altura de **diferentes partes del árbol***|*Encontrar el ancestro común **más cercano entre dos nodos***|*Reorganizar el árbol para **mantener balance***|*Crear copias **del árbol o subárboles***
+|- Todo el árbol|- Por recorrido hacia arriba|- Rotaciones simples|- Copia superficial
+|- Un nodo específico|- Por marcado de caminos|- Rotaciones dobles|- Copia profunda
+|- Un subárbol|- Por comparación de profundidades|- Rebalanceo completo|- Copia parcial (subárboles)
+|||||
+**Operaciones de análisis**|**Fusión y división**|**Serialización**|**Validación**
+*Calcular **propiedades del árbol***|*Operaciones **estructurales complejas***|*Convertir el árbol en **una forma lineal***|*Verificar **propiedades del árbol***
+|- Número de nodos|- Combinar dos árboles|- Para almacenamiento|- Integridad estructural
+|- Profundidad máxima/mínima|- Dividir un árbol en subárboles|- Para transmisión|- Propiedades específicas (como en BST)
+|- Factor de ramificación|- Injertar subárboles|- Para persistencia|- Restricciones de balance
 
 ### Tipos de Árboles
 
