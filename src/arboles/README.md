@@ -20,9 +20,10 @@ Finalmente veremos que hay múltiples formas de **recorrer** un árbol ([ejemplo
 |**[ejemplo005](ejemplo005/)**| Binary Search Tree (BST): inserción con criterio de comparación. Menores a la izquierda, mayores a la derecha. Duplicados ignorados. |
 |**[ejemplo006](ejemplo006/)**| BST con recorridos iterativos: preorden (raíz-izq-der), inorden (izq-raíz-der), postorden (izq-der-raíz). El recorrido inorden muestra valores ordenados. |
 
-## Nota
+## Notas
 
 - Progresión diseñada para aprender gradualmente: DFS → BFS → Binario → BST → Recorridos
+- Para entender cómo las **políticas de inserción** afectan la forma y eficiencia del árbol, consulta la [teoría sobre inserciones](/temario/003-arboles/inserciones.md#políticas-de-inserción)
 
 ## Material obsoleto
 
