@@ -8,7 +8,9 @@ Una vez insertados, necesitaremos **visualizar** el árbol ([ejemplo001](ejemplo
 
 Descubriremos que el **criterio de inserción** ([ejemplo003](ejemplo003/), [ejemplo005](ejemplo005/)) y el número de hijos ([ejemplo004](ejemplo004/)) determinan las propiedades del árbol: balanceo, ordenación, eficiencia de búsqueda.
 
-Finalmente veremos que hay múltiples formas de **recorrer** un árbol ([ejemplo006](ejemplo006/)), cada una con propósitos diferentes.
+Luego exploraremos diferentes formas de **recorrer** un árbol ([ejemplo006](ejemplo006/)), cada una con propósitos diferentes.
+
+Finalmente veremos cómo **buscar** eficientemente ([ejemplo007](ejemplo007/)) en un BST aprovechando su ordenación.
 
 |Ejemplo|Descripción|
 |-|-|
@@ -19,12 +21,14 @@ Finalmente veremos que hay múltiples formas de **recorrer** un árbol ([ejemplo
 |**[ejemplo004](ejemplo004/)**| Árbol binario simple (2 hijos): inserción por niveles sin criterio de ordenación. Introduce conceptos de izquierda/derecha. |
 |**[ejemplo005](ejemplo005/)**| Binary Search Tree (BST): inserción con criterio de comparación. Menores a la izquierda, mayores a la derecha. Duplicados ignorados. |
 |**[ejemplo006](ejemplo006/)**| BST con recorridos iterativos: preorden (raíz-izq-der), inorden (izq-raíz-der), postorden (izq-der-raíz). El recorrido inorden muestra valores ordenados. |
+|**[ejemplo007](ejemplo007/)**| BST con búsqueda iterativa: búsqueda eficiente O(log n) aprovechando el ordenamiento del árbol. Permite buscar valores sin recorrer todos los nodos. |
 
 ## Notas
 
-- Progresión diseñada para aprender gradualmente: DFS → BFS → Binario → BST → Recorridos
+- Progresión diseñada para aprender gradualmente: DFS → BFS → Binario → BST → Recorridos → Búsqueda
 - Para entender cómo las **políticas de inserción** afectan la forma y eficiencia del árbol, consulta la [teoría sobre inserciones](/temario/003-arboles/inserciones.md#políticas-de-inserción)
 - Para conocer las **aplicaciones prácticas** de cada tipo de recorrido, consulta la [teoría sobre recorridos](/temario/003-arboles/recorridos.md#aplicaciones-prácticas)
+- Para comprender la **eficiencia de la búsqueda** en diferentes tipos de árboles, consulta la [teoría sobre búsqueda](/temario/003-arboles/busqueda.md#comparación-de-eficiencias)
 
 ## Material obsoleto
 
