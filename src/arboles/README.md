@@ -1,5 +1,15 @@
 # 🚬🌲
 
+Supongamos un árbol conformado por [nodos](ejemplo000/Node.java) que admiten conectarse con otros tres nodos.
+
+Hará falta un [Tree](ejemplo000/Tree.java) que gestione lo que ocurre con el árbol. Lo primero será **agregar elementos** ([ejemplo000](ejemplo000/)), pero surge la pregunta: ¿dónde los insertamos? ¿Llenamos en profundidad o por niveles? ¿Con qué criterio?
+
+Una vez insertados, necesitaremos **visualizar** el árbol ([ejemplo001](ejemplo001/)) para entender qué estructura hemos creado.
+
+Descubriremos que el **criterio de inserción** ([ejemplo003](ejemplo003/), [ejemplo005](ejemplo005/)) y el número de hijos ([ejemplo004](ejemplo004/)) determinan las propiedades del árbol: balanceo, ordenación, eficiencia de búsqueda.
+
+Finalmente veremos que hay múltiples formas de **recorrer** un árbol ([ejemplo006](ejemplo006/)), cada una con propósitos diferentes.
+
 |Ejemplo|Descripción|
 |-|-|
 |**[ejemplo000](ejemplo000/)**| Inserción simple por profundidad (DFS): cuando se llena un nodo, se le crea un hijo. Árbol de 3 hijos. Sin validación de centinela (-1). Solo visualización con depurador. |
