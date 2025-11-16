@@ -14,10 +14,12 @@ public class TreeSample {
     }
 
     private static void fillTree(BinaryTree tree) {
+        Scanner scanner = new Scanner(System.in);
         int value;
         do {
-            value = new Scanner(System.in).nextInt();
+            value = scanner.nextInt();
             tree.insert(value);
         } while (value != -1);
+        scanner.close();
     }
 }

@@ -1,0 +1,23 @@
+# 🚬🌲
+
+|Ejemplo|Descripción|
+|-|-|
+|**[ejemplo000](ejemplo000/)**| Inserción simple por profundidad (DFS): cuando se llena un nodo, se le crea un hijo. Árbol de 3 hijos. Sin validación de centinela (-1). Solo visualización con depurador. |
+|**[ejemplo001](ejemplo001/)**| Igual que ejemplo000 pero añade impresión iterativa del árbol con indentación por niveles. |
+|**[ejemplo002](ejemplo002/)**| Igual que ejemplo001 pero valida el centinela: el valor -1 no se inserta en el árbol. |
+|**[ejemplo003](ejemplo003/)**| Inserción por niveles (BFS): llena nivel por nivel, de izquierda a derecha. Árbol balanceado de 3 hijos. |
+|**[ejemplo004](ejemplo004/)**| Árbol binario simple (2 hijos): inserción por niveles sin criterio de ordenación. Introduce conceptos de izquierda/derecha. |
+|**[ejemplo005](ejemplo005/)**| Binary Search Tree (BST): inserción con criterio de comparación. Menores a la izquierda, mayores a la derecha. Duplicados ignorados. |
+|**[ejemplo006](ejemplo006/)**| BST con recorridos iterativos: preorden (raíz-izq-der), inorden (izq-raíz-der), postorden (izq-der-raíz). El recorrido inorden muestra valores ordenados. |
+
+## Nota
+
+- Progresión diseñada para aprender gradualmente: DFS → BFS → Binario → BST → Recorridos
+
+## Material obsoleto
+
+La carpeta `zzz-deprecated/` contiene código antiguo que ha sido superado por los ejemplos actuales:
+
+- `insertSample/` - Reemplazado por ejemplo006
+- `recorridos/` - Versiones recursivas, reemplazadas por ejemplo006 iterativo
+- `btree/` - B-Tree avanzado, fuera del alcance de esta progresión básica
