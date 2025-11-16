@@ -24,6 +24,7 @@ Finalmente veremos que hay múltiples formas de **recorrer** un árbol ([ejemplo
 
 - Progresión diseñada para aprender gradualmente: DFS → BFS → Binario → BST → Recorridos
 - Para entender cómo las **políticas de inserción** afectan la forma y eficiencia del árbol, consulta la [teoría sobre inserciones](/temario/003-arboles/inserciones.md#políticas-de-inserción)
+- Para conocer las **aplicaciones prácticas** de cada tipo de recorrido, consulta la [teoría sobre recorridos](/temario/003-arboles/recorridos.md#aplicaciones-prácticas)
 
 ## Material obsoleto
 
