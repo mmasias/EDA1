@@ -17,15 +17,19 @@ No todos los recorridos se aplican a todos los tipos de árboles:
 
 ### Recorrido específico de árboles binarios
 
-**Inorden** requiere exactamente 2 hijos (izquierdo y derecho):
+**Inorden** es un recorrido exclusivo de árboles binarios. Visita hijo izquierdo → raíz → hijo derecho.
 
-- **Inorden (izquierdo → raíz → derecho):** Visita hijo izquierdo, luego raíz, luego hijo derecho
+**¿Por qué solo binarios?** El concepto de procesar la raíz "entre" sus hijos solo tiene sentido con exactamente dos hijos (un "antes" y un "después").
 
-**¿Por qué solo binarios?** Con 3 hijos no hay definición natural: ¿dónde colocar la raíz respecto a los tres hijos? Inorden depende de tener exactamente dos "lados".
+**Aplicable a:**
+- [Árboles binarios](/src/arboles/ejemplo004/) (2 hijos)
+- [BST](/src/arboles/ejemplo005/) (2 hijos)
 
-**Aplicable a:** [Árboles binarios](/src/arboles/ejemplo004/), [BST](/src/arboles/ejemplo005/)
+**No aplicable a:** [Árboles de 3 hijos](/src/arboles/ejemplo000/) ni otros árboles n-arios
 
 **Utilidad en BST:** El recorrido inorden de un árbol binario de búsqueda produce los valores **en orden ascendente** ([ver ejemplo006](/src/arboles/ejemplo006/)).
+
+> ***2Think:*** ¿Podría generalizarse inorden a árboles con número par de hijos? Por ejemplo, con 4 hijos: ¿visitar los dos primeros, luego la raíz, luego los dos últimos? ¿Sería útil? ¿Por qué no se usa en la práctica?
 
 ## Recorridos en árboles binarios
 
