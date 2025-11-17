@@ -92,16 +92,20 @@ class Tree {
             if (current == root) {
                 root = current.getLeft();
             } else if (isLeftChild) {
+                parent.detachLeftChild();
                 parent.attachLeftChild(current.getLeft());
             } else {
+                parent.detachRightChild();
                 parent.attachRightChild(current.getLeft());
             }
         } else if (!current.hasLeftChild() && current.hasRightChild()) {
             if (current == root) {
                 root = current.getRight();
             } else if (isLeftChild) {
+                parent.detachLeftChild();
                 parent.attachLeftChild(current.getRight());
             } else {
+                parent.detachRightChild();
                 parent.attachRightChild(current.getRight());
             }
         } else {
@@ -116,9 +120,15 @@ class Tree {
             current.setKey(successor.getKey());
 
             if (successorParent == current) {
-                successorParent.attachRightChild(successor.getRight());
+                successorParent.detachRightChild();
+                if (successor.hasRightChild()) {
+                    successorParent.attachRightChild(successor.getRight());
+                }
             } else {
-                successorParent.attachLeftChild(successor.getRight());
+                successorParent.detachLeftChild();
+                if (successor.hasRightChild()) {
+                    successorParent.attachLeftChild(successor.getRight());
+                }
             }
         }
 

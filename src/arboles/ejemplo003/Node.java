@@ -32,9 +32,9 @@ class Node {
     }
 
     public void addChild(Node child) {
-        if (hasSpace()) {
-            children[childCount] = child;
-            childCount++;
-        }
+        assert child != null : "El hijo no puede ser null";
+        assert hasSpace() : "No hay espacio para más hijos";
+        children[childCount] = child;
+        childCount++;
     }
 }

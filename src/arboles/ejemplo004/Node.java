@@ -36,10 +36,14 @@ class Node {
     }
 
     public void attachLeftChild(Node child) {
+        assert child != null : "El hijo izquierdo no puede ser null";
+        assert left == null : "Ya existe un hijo izquierdo";
         left = child;
     }
 
     public void attachRightChild(Node child) {
+        assert child != null : "El hijo derecho no puede ser null";
+        assert right == null : "Ya existe un hijo derecho";
         right = child;
     }
 }
