@@ -92,7 +92,7 @@ Representar datos jerárquicos|Facilitar búsquedas|Manejar datos ordenados
 
 #### Básicas
 
-[Inserción](inserciones.md)|[Recorrido](recorridos.md)|[Búsqueda](busqueda.md)|Eliminación|
+[Inserción](inserciones.md)|[Recorrido](recorridos.md)|[Búsqueda](busqueda.md)|[Eliminación](eliminacion.md)|
 |-|-|-|-|
 *Agregar nodos **respetando las propiedades del árbol***|*Visitar todos los nodos **en un orden específico***|*Encontrar un nodo específico*|*Remover nodos **manteniendo la estructura del árbol***|
 |- Como hoja|- Preorden (raíz, izquierda, derecha)|- Por valor|- Eliminación de hojas|
