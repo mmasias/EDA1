@@ -1,13 +1,13 @@
 package ejemplo006;
 
 class Tree {
-    Node root;
+    private Node root;
 
-    Tree() {
+    public Tree() {
         root = null;
     }
 
-    void insert(int key) {
+    public void insert(int key) {
         if (root == null) {
             root = new Node(key);
         } else {
@@ -36,7 +36,7 @@ class Tree {
         }
     }
 
-    void printPreorder() {
+    public void printPreorder() {
         if (root == null) {
             System.out.println("Árbol vacío");
             return;
@@ -67,7 +67,7 @@ class Tree {
         System.out.println();
     }
 
-    void printInorder() {
+    public void printInorder() {
         if (root == null) {
             System.out.println("Árbol vacío");
             return;
@@ -92,7 +92,7 @@ class Tree {
         System.out.println();
     }
 
-    void printPostorder() {
+    public void printPostorder() {
         if (root == null) {
             System.out.println("Árbol vacío");
             return;
