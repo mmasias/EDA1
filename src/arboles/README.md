@@ -34,6 +34,19 @@ Finalmente enfrentaremos el desafío de **eliminar** nodos ([ejemplo008](ejemplo
 - Para comprender la **eficiencia de la búsqueda** en diferentes tipos de árboles, consulta la [teoría sobre búsqueda](/temario/003-arboles/busqueda.md#comparación-de-eficiencias)
 - Para entender los **3 casos de eliminación** y la estrategia del sucesor inorden, consulta la [teoría sobre eliminación](/temario/003-arboles/eliminacion.md#los-tres-casos)
 
+### ¿Por qué?
+
+|Transición|De|A|Razón del cambio (El "Porqué")|
+|:---|:---|:---|:---|
+|**000 → 001**|Inserción ciega|Visualización|**Necesidad de feedback visual.** En 000 insertábamos a ciegas. 001 añade `printTree` para verificar visualmente la estructura creada. |
+|**001 → 002**|Datos "sucios"|Validación|**Integridad de datos.** 001 permitía insertar el centinela (-1) como un nodo válido. 002 añade validación para ignorarlo. |
+|**002 → 003**|DFS (Profundidad)|BFS (Anchura)|**Balanceo natural.** DFS (Pila) tiende a crear ramas muy largas y desbalanceadas si los datos llegan en cierto orden. BFS (Cola) garantiza llenar el árbol nivel por nivel, manteniéndolo compacto. |
+|**003 → 004**|Árbol N-ario|Árbol Binario|**Estandarización.** Los árboles de 3 hijos son inusuales. Pasar a Binario (2 hijos) prepara el terreno para algoritmos estándar (BST, AVL, etc.) y simplifica la estructura de nodos (`left`/`right` vs `children[]`). |
+|**004 → 005**|Inserción por espacio|Inserción por valor (BST)|**Eficiencia de búsqueda.** En 004 insertábamos en el primer hueco libre (ciego al valor). 005 introduce el criterio de orden (menores izq, mayores der), convirtiéndolo en un **Binary Search Tree**, fundamental para búsquedas rápidas. |
+|**005 → 006**|Estructura estática|Recorridos|**Procesamiento de datos.** Tener el árbol no basta; necesitamos recorrerlo. 006 añade Preorden, Inorden y Postorden. *Nota: El Inorden en un BST permite recuperar los datos ordenados.* |
+|**006 → 007**|Recorrido completo|Búsqueda optimizada|**Performance.** Para buscar en 006 tendríamos que recorrer todo el árbol O(n). 007 aprovecha la propiedad BST para descartar mitades del árbol en cada paso, logrando O(log n). |
+|**007 → 008**|Solo inserción/búsqueda|CRUD Completo (Eliminación)|**Ciclo de vida completo.** Un sistema real necesita borrar datos. La eliminación es compleja porque no debe romper la estructura del árbol (requiere reubicar hijos o encontrar sucesores). 008 resuelve esto. |
+
 ## Material obsoleto
 
 La carpeta `zzz-deprecated/` contiene código antiguo que ha sido superado por los ejemplos actuales:
