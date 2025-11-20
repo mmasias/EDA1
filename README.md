@@ -8,6 +8,29 @@
 [Grafos](temario/004-grafos/README.md)
 [Ficheros](temario/005-ficheros/README.md)
 
+## Jerarquía de estructuras de datos
+
+Esta jerarquía muestra cómo las estructuras de datos más simples pueden verse como restricciones de estructuras más generales.
+
+<table>
+<tr>
+<td><b>Grafo</b>: La estructura más general (Vértices y Aristas).</td>
+<td rowspan="4">
+
+![](/images/modelosUML/jerarquiaEstructuras.svg)
+</td>
+</tr>
+<tr>
+<td><b>Árbol</b>: Un grafo con restricciones (debe ser conexo y no tener ciclos).</td>
+</tr>
+<tr>
+<td><b>Lista</b>: Un árbol degenerado donde cada nodo tiene como máximo 1 hijo (lineal).</td>
+</tr>
+<tr>
+<td><b>Pila / Cola</b>: Listas con restricciones en el acceso a los datos (LIFO / FIFO).</td>
+</tr>
+</table>
+
 ## Lecturas complementarias
 
 - Acerca de... : qué son, qué no son, qué saben, qué no saben...
