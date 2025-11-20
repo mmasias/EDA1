@@ -1,0 +1,14 @@
+@startuml
+skinparam componentStyle rectangle
+
+component Grafo
+component Árbol
+component Lista
+component Pila
+component Cola
+
+Grafo --> Árbol : Restricción:\nConexo + Acíclico
+Árbol --> Lista : Restricción:\nGrado máx 2
+Lista --> Pila : Restricción:\nLIFO
+Lista --> Cola : Restricción:\nFIFO
+@enduml
