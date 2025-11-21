@@ -1,4 +1,4 @@
-# Árboles - Eliminación
+# Árboles > eliminación
 
 Eliminar un nodo de un árbol es la operación más compleja de las básicas. A diferencia de la inserción y búsqueda, la eliminación debe mantener la estructura y propiedades del árbol tras remover un elemento que puede tener hijos.
 
