@@ -67,23 +67,7 @@ Se usa un criterio de comparación: menores a la izquierda, mayores a la derecha
 - Puede desbalancearse si se insertan valores ordenados
 - O(log n) búsqueda en árbol balanceado, O(n) en árbol degenerado
 
-**Problema de degeneración:**
-
-Si insertamos valores en orden secuencial (1, 2, 3, 4, 5...), el BST degenera en una lista enlazada:
-
-```
-1            vs         3
- \                     / \
-  2                   1   5
-   \                     / \
-    3                   4   6
-     \
-      4
-```
-
 **Ver:** [ejemplo005](/src/arboles/ejemplo005/) - BST básico
-
-**Nota:** Los árboles auto-balanceados (AVL, Rojo-Negro) resuelven este problema ajustando la estructura automáticamente.
 
 ## Inserción en árboles binarios de búsqueda (BST)
 
