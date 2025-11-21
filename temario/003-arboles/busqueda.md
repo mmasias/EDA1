@@ -1,4 +1,4 @@
-# Árboles - Búsqueda
+# Árboles > búsquedas
 
 Buscar en un árbol significa localizar un nodo que contenga un valor específico. La eficiencia de esta operación depende directamente de cómo esté organizado el árbol.
 
