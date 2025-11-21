@@ -105,11 +105,11 @@ Representar datos jerárquicos|Facilitar búsquedas|Manejar datos ordenados
 Cálculo de altura|Búsqueda de ancestro común|Balanceo|Clonación y copia
 |-|-|-|-|
 *Determinar la altura de **diferentes partes del árbol***|*Encontrar el ancestro común **más cercano entre dos nodos***|*Reorganizar el árbol para **mantener balance***|*Crear copias **del árbol o subárboles***
-|- Todo el árbol|- Por recorrido hacia arriba|- Rotaciones simples|- Copia superficial
+|- Todo el árbol|- Por recorrido hacia arriba|- [Rotaciones simples](rotaciones.md)|- Copia superficial
 |- Un nodo específico|- Por marcado de caminos|- Rotaciones dobles|- Copia profunda
 |- Un subárbol|- Por comparación de profundidades|- Rebalanceo completo|- Copia parcial (subárboles)
 |||||
-**Operaciones de análisis**|**Fusión y división**|**Serialización**|**Validación**
+**Operaciones de análisis**|**Fusión y división**|**[Serialización](serializacion.md)**|**Validación**
 *Calcular **propiedades del árbol***|*Operaciones **estructurales complejas***|*Convertir el árbol en **una forma lineal***|*Verificar **propiedades del árbol***
 |- Número de nodos|- Combinar dos árboles|- Para almacenamiento|- Integridad estructural
 |- Profundidad máxima/mínima|- Dividir un árbol en subárboles|- Para transmisión|- Propiedades específicas (como en BST)
