@@ -1,4 +1,4 @@
-# Árboles - Recorridos
+# Árboles > recorridos
 
 Recorrer un árbol significa visitar todos sus nodos en un orden específico. El objetivo es procesar cada nodo exactamente una vez siguiendo una estrategia determinada.
 
