@@ -32,3 +32,40 @@ Procedural puro
 
 </div>
 
+#### [vPRG2_01_unsafe](vPRG2_01_unsafe)
+
+Arrays de objetos sin protección
+
+<div align=center>
+
+|Características|Limitaciones|
+|-|-|
+|Clases: `Customer`, `CashRegister`, `CCCF`, `Simulation`|Sin validación de capacidad: revienta con `ArrayIndexOutOfBoundsException`|
+|Arrays de objetos: `Customer[]`, `CashRegister[]`|Índices sin aritmética circular: `rear = rear + 1`|
+|Encapsulación de responsabilidades|Propósito: experimentar el crash antes de aprender protecciones|
+
+</div>
+
+**Implementación crítica:** esta aproximación revienta cuando rear >= 100.
+
+```java
+if (Math.random() < PROBABILITY_ARRIVAL) {
+    queue[rear] = new Customer(items);
+    rear = rear + 1;
+    size = size + 1;
+}
+```
+
+```console
+[13.15]
+FILA: _O_._O_._O_._O_._O_._O_. 
+     ===================================
+Caja[1] [:][:][:][:][:][:]
+Caja[2] 
+Caja[3] [:][:][:][:][:][:][:][:]
+Caja[4] 
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 100 out of bounds for length 100
+    at vPRG2_01_unsafe.CCCF.run(CCCF.java:36)
+    at vPRG2_01_unsafe.Simulation.main(Simulation.java:6)
+```
