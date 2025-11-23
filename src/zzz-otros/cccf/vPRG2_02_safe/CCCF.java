@@ -8,8 +8,6 @@ class CCCF {
     private final double MINUTE = 1.0 / 60.0;
     private final int MAX_QUEUE = 100;
     private final double PROBABILITY_ARRIVAL = 0.4;
-    private final int ITEM_MINIMUM = 5;
-    private final int ITEM_MAXIMUM = 15;
     private final int NUM_CASH_REGISTERS = 4;
 
     public void run() {
@@ -32,8 +30,7 @@ class CCCF {
             isWorking = currentTime < CLOSING_TIME;
 
             if (Math.random() < PROBABILITY_ARRIVAL && size < MAX_QUEUE) {
-                int items = createItems(ITEM_MAXIMUM, ITEM_MINIMUM);
-                queue[rear] = new Customer(items);
+                queue[rear] = new Customer();
                 rear = (rear + 1) % MAX_QUEUE;
                 size = size + 1;
             }
@@ -61,10 +58,6 @@ class CCCF {
         } while (isWorking);
 
         scanner.close();
-    }
-
-    private int createItems(int maxItems, int minItems) {
-        return (int) (Math.random() * (maxItems - minItems)) + minItems;
     }
 
     private void describeCashRegister(CashRegister cashRegister) {

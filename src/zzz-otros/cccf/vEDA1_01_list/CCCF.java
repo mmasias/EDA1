@@ -1,4 +1,4 @@
-package vPRG2_01_unsafe;
+package vEDA1_01_list;
 
 import java.util.Scanner;
 
@@ -6,7 +6,6 @@ class CCCF {
     private final double OPENING_TIME = 9.0;
     private final double CLOSING_TIME = 21.0;
     private final double MINUTE = 1.0 / 60.0;
-    private final int MAX_QUEUE = 100;
     private final double PROBABILITY_ARRIVAL = 0.4;
     private final int NUM_CASH_REGISTERS = 4;
 
@@ -15,10 +14,7 @@ class CCCF {
         double currentTime = OPENING_TIME;
         boolean isWorking = true;
 
-        Customer[] queue = new Customer[MAX_QUEUE];
-        int front = 0;
-        int rear = 0;
-        int size = 0;
+        List queue = new List();
 
         CashRegister[] cashRegisters = new CashRegister[NUM_CASH_REGISTERS];
         for (int i = 0; i < NUM_CASH_REGISTERS; i = i + 1) {
@@ -30,16 +26,12 @@ class CCCF {
             isWorking = currentTime < CLOSING_TIME;
 
             if (Math.random() < PROBABILITY_ARRIVAL) {
-                queue[rear] = new Customer();
-                rear = rear + 1;
-                size = size + 1;
+                queue.addLast(new Customer());
             }
 
             for (int i = 0; i < NUM_CASH_REGISTERS; i = i + 1) {
-                if (cashRegisters[i].isFree() && size > 0) {
-                    Customer customer = queue[front];
-                    front = front + 1;
-                    size = size - 1;
+                if (cashRegisters[i].isFree() && !queue.isEmpty()) {
+                    Customer customer = queue.removeFirst();
                     cashRegisters[i].serve(customer);
                 }
             }
@@ -48,7 +40,7 @@ class CCCF {
                 cashRegisters[i].process();
             }
 
-            showHeader(currentTime, size);
+            showHeader(currentTime, queue.size());
             for (int i = 0; i < NUM_CASH_REGISTERS; i = i + 1) {
                 describeCashRegister(cashRegisters[i]);
             }

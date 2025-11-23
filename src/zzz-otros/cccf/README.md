@@ -99,3 +99,49 @@ if (Math.random() < PROBABILITY_ARRIVAL && size < MAX_QUEUE) {
 
 Los índices `front` y `rear` simulan el comportamiento de punteros. Esta simulación prepara conceptualmente para trabajar con referencias dinámicas.
 
+#### [vEDA1_01_list](vEDA1_01_list)
+
+Lista dinámica con nodos enlazados
+
+<div align=center>
+
+|Características|Limitaciones|
+|-|-|
+|Nodos enlazados con referencias a `Customer`|API extensa: múltiples métodos públicos|
+|Implementación manual|Responsabilidad del programador mantener semántica FIFO|
+|Crecimiento dinámico sin límite artificial|Posibilidad de operaciones incorrectas: `removeLast()` en una cola|
+|Memoria proporcional al número de elementos|Nada garantiza que uses FIFO correctamente|
+|Referencias dinámicas reales||
+
+</div>
+
+**API completa:** `add()`, `addFirst()`, `addLast()`, `remove()`, `removeFirst()`, `removeLast()`, `get(index)`
+
+#### [vEDA1_02_queue](vEDA1_02_queue)
+
+Cola especializada (ADT)
+
+<div align=center>
+
+|Características|Ventajas|
+|-|-|
+|Implementación interna idéntica a vEDA1_01_list|Garantía de comportamiento FIFO|
+|API restringida: `enqueue()`, `dequeue()`, `isEmpty()`, `size()`|API mínima reduce posibilidad de errores|
+|Sin operaciones que rompan semántica FIFO|Errores generan errores de compilación, no lógicos|
+||Intención explícita del código|
+
+</div>
+
+**Concepto clave:**
+
+Misma estructura interna, diferente interfaz pública. Demuestra la distinción entre Tipo Abstracto de Datos (ADT) e implementación.
+
+## Progresión completa
+
+```text
+vPRG1               →  Arrays de objetos
+vPRG2_01_unsafe     →  Protección de límites
+vPRG2_02_safe       →  Estructuras dinámicas
+vEDA1_01_list       →  Especialización de API
+vEDA1_02_queue      →  Solución optimizada
+```

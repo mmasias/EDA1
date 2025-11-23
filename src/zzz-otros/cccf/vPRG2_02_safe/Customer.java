@@ -1,10 +1,12 @@
 package vPRG2_02_safe;
 
 class Customer {
+    private static final int ITEM_MINIMUM = 5;
+    private static final int ITEM_MAXIMUM = 15;
     private int items;
 
-    public Customer(int items) {
-        this.items = items;
+    public Customer() {
+        this.items = (int) (Math.random() * (ITEM_MAXIMUM - ITEM_MINIMUM)) + ITEM_MINIMUM;
     }
 
     public int getItems() {

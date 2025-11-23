@@ -1,4 +1,4 @@
-package vPRG2_01_unsafe;
+package vEDA1_01_list;
 
 class Customer {
     private static final int ITEM_MINIMUM = 5;
