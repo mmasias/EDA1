@@ -69,3 +69,33 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 100 o
     at vPRG2_01_unsafe.CCCF.run(CCCF.java:36)
     at vPRG2_01_unsafe.Simulation.main(Simulation.java:6)
 ```
+
+#### [vPRG2_02_safe](vPRG2_02_safe)
+
+Arrays de objetos con protección
+
+<div align=center>
+
+|Características|Limitaciones|
+|-|-|
+|Validación de capacidad: `size < MAX_QUEUE`|Capacidad fija: `MAX_QUEUE = 100`|
+|Aritmética circular: `(rear + 1) % MAX_QUEUE`|Rechaza clientes cuando la cola está llena|
+|Reutilización de posiciones liberadas|Desperdicio de memoria si nunca se llena|
+|Simula "punteros" con índices `front` y `rear`|Complejidad adicional por gestión circular|
+
+</div>
+
+**Implementación crítica:** implementación circular. El operador `%` garantiza la vuelta a 0
+
+```java
+if (Math.random() < PROBABILITY_ARRIVAL && size < MAX_QUEUE) {
+    queue[rear] = new Customer(items);
+    rear = (rear + 1) % MAX_QUEUE;
+    size = size + 1;
+}
+```
+
+**Observación técnica:**
+
+Los índices `front` y `rear` simulan el comportamiento de punteros. Esta simulación prepara conceptualmente para trabajar con referencias dinámicas.
+
