@@ -16,6 +16,15 @@ Mostrar la progresión natural desde código estructurado hasta estructuras de d
 
 ## ¿Cómo?
 
+<div align=center>
+
+|PRG1|PRG2|EDA1|
+|-|-|-|
+|[vPRG1](vPRG1)|[vPRG2](vPRG2_01_unsafe)|[vEDA1](vEDA1_01_list)
+||[vPRG2](vPRG2_02_safe)|[vEDA1](vEDA1_02_queue)
+
+</div>
+
 ### Versiones
 
 #### [vPRG1](vPRG1)
