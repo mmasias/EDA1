@@ -1,6 +1,6 @@
 # pyCCCF evolutivo
 
-> *Basado en el [pyCCCF](https://github.com/puntoReflex/pyCCCF)*
+> *Basado en el [pyCCCF](https://github.com/puntoReflex/pyCCCF/blob/main/enunciado.md)*
 
 ## ¿Por qué?
 
