@@ -41,20 +41,21 @@ En Java, hay dos mecanismos principales:
 
 Cuando implementamos estructuras de datos básicas, **el código cliente es responsable de verificar las precondiciones**:
 
-```java
-// USO CORRECTO: el cliente verifica antes de operar
-Pila pila = new Pila();
-// ...
-if (!pila.estaVacia()) {
-    int valor = pila.pop();  // Seguro, la precondición se cumple
-}
-```
+> El siguiente ejemplo, que muestra el código del cliente es correcto: es él quien **debe verificar** que la pila esté vacía antes de llamar al método `.pop()`
+> 
+> ```java
+> Pila pila = new Pila();
+> // (...)
+> if (!pila.estaVacia()) {
+>     int valor = pila.pop();
+> }
+> ```
 
 **¿Por qué assertions y no try-catch?**
 
 - El cliente puede y debe verificar `estaVacia()` antes de llamar a `pop()`
 - Es un error de lógica de programación llamar a `pop()` en una pila vacía
-- No es una situación impredecible, sino una violación de las reglas de uso
+- **No es** una situación impredecible, sino una **violación de las reglas de uso**
 
 Ver implementaciones en:
 
