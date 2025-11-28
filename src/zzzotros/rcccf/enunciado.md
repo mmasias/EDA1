@@ -34,7 +34,7 @@ Cuando llega un pedido, el cliente puede pedir entre uno cualquiera de estos tip
 
 ## Funcionamiento de la cocina
 
-- El restaurante opera durante una jornada de **240 minutos**
+- El restaurante opera durante la misma jornada del CCCF
 - Hay **un cocinero** que procesa los pedidos
 - Cada minuto puede llegar un nuevo pedido (40% de probabilidad)
 - El cocinero siempre selecciona el pedido pendiente con **menor tiempo de preparación**
