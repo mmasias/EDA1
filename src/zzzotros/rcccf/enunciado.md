@@ -30,7 +30,7 @@ El restaurante ofrece 5 tipos de platos, cada uno con un rango de tiempo de prep
 
 </div>
 
-Cuando llega un pedido, se selecciona aleatoriamente uno de estos tipos de plato. El tiempo específico de preparación se genera aleatoriamente dentro del rango correspondiente.
+Cuando llega un pedido, el cliente puede pedir entre uno cualquiera de estos tipos de plato (asuma una distribución aleatoria con la misma probabilidad de pedir cada uno). El tiempo específico de preparación se genera aleatoriamente dentro del rango correspondiente.
 
 ## Funcionamiento de la cocina
 
