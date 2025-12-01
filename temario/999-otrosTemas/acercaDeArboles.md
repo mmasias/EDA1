@@ -16,9 +16,9 @@
 
 ```java
 class Nodo {
-    int dato;
-    Nodo izquierdo;
-    Nodo derecho;
+    private int dato;
+    private Nodo izquierdo;
+    private Nodo derecho;
     
     public Nodo(int dato) {
         this.dato = dato;
