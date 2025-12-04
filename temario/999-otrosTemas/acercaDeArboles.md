@@ -25,6 +25,26 @@ class Nodo {
         this.izquierdo = null;
         this.derecho = null;
     }
+    
+    public int getDato() {
+        return dato;
+    }
+    
+    public Nodo getIzquierdo() {
+        return izquierdo;
+    }
+    
+    public Nodo getDerecho() {
+        return derecho;
+    }
+    
+    public void setIzquierdo(Nodo izquierdo) {
+        this.izquierdo = izquierdo;
+    }
+    
+    public void setDerecho(Nodo derecho) {
+        this.derecho = derecho;
+    }
 }
 
 class ArbolBinario {
@@ -35,21 +55,34 @@ class ArbolBinario {
     }
     
     public void insertar(int dato) {
-        raiz = insertarRecursivo(raiz, dato);
-    }
-    
-    private Nodo insertarRecursivo(Nodo actual, int dato) {
-        if (actual == null) {
-            return new Nodo(dato);
+        if (raiz == null) {
+            raiz = new Nodo(dato);
+        } else {
+            Nodo actual = raiz;
+            Nodo padre = null;
+            boolean irIzquierda = false;
+            
+            while (actual != null) {
+                padre = actual;
+                if (dato < actual.getDato()) {
+                    irIzquierda = true;
+                    actual = actual.getIzquierdo();
+                } else if (dato > actual.getDato()) {
+                    irIzquierda = false;
+                    actual = actual.getDerecho();
+                } else {
+                    actual = null;
+                }
+            }
+            
+            if (dato != padre.getDato()) {
+                if (irIzquierda) {
+                    padre.setIzquierdo(new Nodo(dato));
+                } else {
+                    padre.setDerecho(new Nodo(dato));
+                }
+            }
         }
-        
-        if (dato < actual.dato) {
-            actual.izquierdo = insertarRecursivo(actual.izquierdo, dato);
-        } else if (dato > actual.dato) {
-            actual.derecho = insertarRecursivo(actual.derecho, dato);
-        }
-        
-        return actual;
     }
 }
 ```
